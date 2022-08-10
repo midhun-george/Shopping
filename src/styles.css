@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* background: url("../src/assets/images/body.jpg") no-repeat center top; */
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/* .mat-select-value {
+    color: #FFF;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: roboto;
+}
+
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ngx-pagination {
+    background: #3f51b5;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    float: right;
+    margin-bottom: 20px !important;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.ngx-pagination a {
+    text-decoration: none;
+}
+
+.mat-menu-panel {
+    min-width: 200px;
+    max-width: 380px !important;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    /* max-height: calc(100vh - 48px); */
+    border-radius: 4px;
+    outline: 0;
+    min-height: 150px !important;
+    position: relative;
+    height: 200px;
+    top: 30px;
+}
+
+.my-custom-snackbar {
+    background: green;
+    color: #FFF !important;
+}
+
+.my-custom-snackbar span {
+    color: #FFF
+}

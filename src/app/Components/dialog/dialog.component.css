@@ -1,0 +1,11 @@
+.mat-dialog-container {
+    background: red;
+    color: white;
+    position: relative;
+    bottom: 270px;
+    left: 14px;
+}
+
+.mat-dialog-title {
+    text-align: center;
+}

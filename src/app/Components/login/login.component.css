@@ -1,0 +1,51 @@
+mat-card-title {
+    text-align: center;
+}
+
+.mat-divider {
+    margin: 20px 0;
+}
+
+mat-card-content.mat-card-content {
+    margin-top: 70px;
+}
+
+.btn-login {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.forgot-pass {
+    margin: 10px 0px 20px;
+}
+
+.signup-link {
+    margin: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.alert {
+    width: calc(100% - 32px);
+    margin: 0px auto;
+    display: flex;
+    position: relative;
+    bottom: 10px;
+}
+
+.error {
+    background: #eb0d3638;
+    color: red;
+    position: relative;
+    bottom: 10px;
+    width: calc(100% - 24px);
+    margin: auto;
+}

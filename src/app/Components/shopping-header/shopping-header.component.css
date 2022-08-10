@@ -1,0 +1,64 @@
+.form-control {
+    border-radius: 3px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.form-group {
+    width: 75%;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 20px;
+    color: blue;
+}
+
+header {
+    width: 100%;
+}
+
+.sidebar .headerContent {
+    width: 300px;
+    height: 100%;
+}
+
+.navbar-brand {
+    width: 100%;
+    position: relative;
+}
+
+.navbar-brand input {
+    width: 100%;
+}
+
+.navbar {
+    align-items: start !important;
+}
+
+.h6,
+h6 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.item {
+    margin: 0px 15px;
+    text-align: center;
+}
+
+.item img {
+    width: 64px;
+    cursor: pointer;
+}
+
+.icon-img img {
+    width: 40px;
+    height: 40px;
+}
+
+.mat-drawer-container {
+    position: static;
+}

@@ -1,0 +1,8 @@
+<div class="container">
+    <app-header tab="task"></app-header>
+    <app-add-tasks *ngIf="addFlag" (addTaskDetails)="saveTask($event)"></app-add-tasks>
+    <app-task-item *ngFor="let task of taskDetails" [task]="task" (reminderToggle)="toggeleReminder(task)" (deleteTaskDetails)="deleteTask(task)">
+
+    </app-task-item>
+    <app-footer></app-footer>
+</div>

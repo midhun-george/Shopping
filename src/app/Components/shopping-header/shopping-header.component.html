@@ -1,0 +1,217 @@
+<mat-sidenav-container class="example-container" style="width: 100%; height: auto !important">
+    <mat-sidenav #sidenav class="sidebar" [fxShow.lt-md]="true" [fxHide]="true" style="height: -webkit-fill-available !important;">
+        <div fxLayout="column" class="headerContent">
+            <div class="userprofbg" fxFlex="105px">
+                <div class="profileimageContent">
+                    <img src="" class="profileimage">
+                    <div fxLayout="column" fxFlex style="padding-top: 10%;color:white">
+                        <div>Midhun</div>
+                        <div>midhun.g@tcs.com</div>
+                    </div>
+                </div>
+                <mat-expansion-panel class="subMenuEP" (opened)="subMenuExpanded(-1)" (closed)="subMenuExpanded(1)">
+                    <mat-expansion-panel-header style="position: absolute;background: transparent;right: 0px;top: 65px;padding: 0 12px;">
+                    </mat-expansion-panel-header>
+                    <mat-list fxLayout="column" dense fxFlexFill>
+                        <a mat-list-item fxFlex [routerLink]="['userdashboard']" (click)="sidenav.close()" style="text-decoration: none">
+                            <div fxFlex=13>
+                                <i class="fa fa-user footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#ff8a80'}"></i>
+                            </div>
+                            <div fxFlex>
+                                <span class="mat-body-2">My Profile</span>
+                            </div>
+                        </a>
+                        <a mat-list-item fxFlex [routerLink]="['partnerdashboard']" (click)="sidenav.close()" style="text-decoration: none">
+                            <div fxFlex=13>
+                                <i class="fa fa-file-text footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#66bb6a'}"></i>
+                            </div>
+                            <div fxFlex>
+                                <span class="mat-body-2">Partner</span>
+                            </div>
+                        </a>
+                        <a mat-list-item fxFlex [routerLink]="['airTMDDashboard']" (click)="sidenav.close()" style="text-decoration: none">
+                            <div fxFlex=13>
+                                <i class="fa fa-file-text footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#26c6da'}"></i>
+                            </div>
+                            <div fxFlex>
+                                <span class="mat-body-2">airTMD</span>
+                            </div>
+                        </a>
+                    </mat-list>
+
+                </mat-expansion-panel>
+            </div>
+            <div fxLayout="column" class="banner-style" fxFlex style="z-index: 0;" id="bannersubmenu">
+                <!-- <div fxLayout="column" class="banner-style" fxFlex.lt-sm=65 fxFlex.lt-md=75 fxFlex.xs=55> -->
+                <div (click)="filter('')" (click)="sidenav.close()" routerLinkActive="active" fxLayout fxLayoutAlign="center" style="padding: 10px">
+                    <div fxFlex=18>
+                        <!-- <button mat-mini-fab color="accent">
+                      <i class="fa fa-users footer-icon icon-size" aria-hidden="true"></i>
+                    </button> -->
+                        <div class="icon-img all-p">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                        </div>
+                    </div>
+                    <div fxFlex style="line-height: 3;">
+                        All products
+                    </div>
+                </div>
+                <div (click)="filter('electronics')" (click)="sidenav.close()" routerLinkActive="active" fxLayoutAlign="center" style="padding: 10px">
+                    <div fxFlex=18>
+                        <!-- <button mat-mini-fab color="accent">
+                      <i class="fa fa-handshake-o footer-icon icon-size" aria-hidden="true"></i>
+                    </button> -->
+                        <div class="icon-img all-p">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                        </div>
+                    </div>
+                    <div fxFlex style="line-height: 3;"> Electronics </div>
+                </div>
+                <div (click)="filter('fashion')" (click)="sidenav.close()" routerLinkActive="active" fxLayoutAlign="center" style="padding: 10px">
+                    <div fxFlex=18>
+                        <!-- <button mat-mini-fab color="accent">
+                      <i class="material-icons footer-icon icon-size">contact_mail</i>
+                    </button> -->
+                        <div class="icon-img all-p">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                        </div>
+                    </div>
+                    <div fxFlex style="line-height: 3;">
+                        Fashion</div>
+                </div>
+                <div fxLayoutAlign="center" (click)="filter('jewllery')" (click)="sidenav.close()" style="padding: 10px">
+                    <div fxFlex=18>
+                        <!-- <button mat-mini-fab color="accent">
+                      <i class="fa fa-question footer-icon icon-size" aria-hidden="true"></i> -->
+                        <!-- </button> -->
+                        <div class="icon-img all-p">
+                            <img src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+                        </div>
+                    </div>
+                    <div fxFlex style="line-height: 3;"> Jewllery
+                    </div>
+                </div>
+
+            </div>
+            <mat-card fxLayout="column" class="banner-style" fxFlex="none" style="padding: 0;">
+                <!-- <div (click)="sidenav.close();signin()" fxLayoutAlign="center" style="padding: 10px">
+                    <div fxFlex=18>
+                        <button mat-mini-fab color="accent">
+                      <i class="fa fa-sign-in footer-icon icon-size" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                    <div fxFlex style="line-height: 3;"> Sign In</div>
+                </div> -->
+                <div (click)="sidenav.close();signOut()" fxLayoutAlign="center" style="padding: 10px">
+                    <div fxFlex=18>
+                        <button mat-mini-fab color="accent">
+                      <i class="fa fa-sign-out footer-icon icon-size" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                    <div fxFlex style="line-height: 3;"> Sign Out</div>
+                </div>
+                <!-- <div class="airtmd-green-theme" fxLayout (click)="sidenav.close()">
+                    <button mat-raised-button color="primary" class="banner-joinus-button" [routerLink]="['/registration']" style="width: 100%">
+                    {{"join us"|uppercase}} </button>
+                </div> -->
+            </mat-card>
+        </div>
+
+    </mat-sidenav>
+    <mat-toolbar color="primary" class="mat-elevation-z2">
+
+        <header>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <button mat-icon-button (click)="sidenav.open()" [fxShow.lt-md]="true" [fxHide]="true">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                <div fxLayout="column" style="height:10px;" [fxShow.lt-md]="true" [fxHide]="true">
+                    <button class="btn btn-primary" routerLink="/cart">
+                        <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                        <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" class="navbar" [fxShow.lt-md]="false" [fxHide]="false">
+                <div fxLayout="column" fxFlex="50">
+                    <div fxLayout="row" fxFlex="100">
+                        <div fxLayout="row" class="navbar-brand align-item-center">
+                            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                            
+                        </i>
+                            <strong style="font-size: 30px;"><em><i>e</i></em>kart</strong>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                            </div>
+                            <span class="fas fa-search search-icon"></span>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="column" style="height:10px;">
+                    <button routerLink="/cart" class="btn btn-primary">
+                        <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                        <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="navbar" color="primary" fxLayout="row" fxFlex="100">
+            <div class="navbar-brand align-item-center" fxFlex="50" fxLayout="column">
+                <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                
+            </i>
+                <strong style="font-size: 30px;"><em><i>e</i></em>kart</strong>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                </div>
+                <span class="fas fa-search search-icon"></span>
+
+
+            </div>
+            <div fxFlex="50" fxLayout="column">
+                <button routerLink="cart" class="btn" style="background:transparent; color:#FFF">
+                    <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                    <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                </button>
+            </div>
+
+        </div> -->
+
+        </header>
+
+    </mat-toolbar>
+    <div class="card-top" fxLayout="row" [fxShow.lt-md]="false" [fxHide]="false">
+        <div class="filter-headers" fxFlex="100" fxLayout="row" fxLayoutAlign="center">
+            <div class="item">
+                <a (click)="filter('')">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                    <h6>All products</h6>
+                </a>
+            </div>
+            <div class="item">
+                <a (click)="filter('electronics')">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                    <h6>Electronics</h6>
+                </a>
+            </div>
+            <div class="item">
+                <a (click)="filter('fashion')">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                    <h6>Fashion</h6>
+                </a>
+            </div>
+            <div class="item">
+                <a (click)="filter('jewelery')">
+                    <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+                    <h6>Jewllery</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!-- <app-slist></app-slist> -->
+    </div>
+</mat-sidenav-container>
+
+<!-- <app-shopping-list></app-shopping-list> -->

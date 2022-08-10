@@ -1,0 +1,20 @@
+.task {
+    margin: 5px;
+    background: #eee;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.task h3 {
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+}
+
+.task h3 .fa {
+    color: red;
+}
+
+.task.reminder {
+    border-left: 5px solid green;
+}

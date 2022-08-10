@@ -1,0 +1,183 @@
+<mat-toolbar color="primary">
+    <span> <strong style="font-size: 30px;"><em><i>e</i></em>kart</strong></span>
+</mat-toolbar>
+<div class="checkout-wrapper" fxLayout="column">
+    <div fxLayout="row">
+        <div fxLayout="column" fxFlex="65" class="col-left" fxLayoutGap="20px">
+            <div class="step-1 checkout-card">
+                <mat-card>
+                    <mat-card-content>
+                        <div fxLayout="row" fxLayoutGap="20">
+                            <div fxLayout="column" fxFlex="25px">
+                                <span class="step-no">1</span>
+                            </div>
+                            <div fxLayout="column" fxFlex="200px">
+                                <span class="step-name">{{'login' | uppercase}}</span>
+                                <span class="uname">
+                                        {{userData.name}} 9544476777
+                                    </span>
+                            </div>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="step-2 checkout-card">
+                <div class="title-bar" [ngClass]='{active:step==2}'>
+                    <span class="step-no" fxFlex="25px">2</span>
+                    <span class="step-name-2">DELIVERY ADDRESS</span>
+                </div>
+                <div fxLayout="column" *ngIf="step==2">
+                    <div fxLayout="row" *ngFor="let item of address; let i = index" class="address-lists" [ngClass]='{selected:item.primary}' (click)="makePrimary(i)">
+                        <div fxLayout="column" fxFlex="5">
+                            <input type="radio" name="add" value="item.id" style="margin-top:4px">
+                        </div>
+                        <div fxLayout="column" fxFlex="95">
+                            <div fxLayout="row" class="add-wrapper" fxLayoutGap="20px">
+                                <span>{{item.Name}}</span>
+                                <span class="add-type">{{item.type}}</span>
+                                <span><h4>{{item.Mobile}}</h4></span>
+                            </div>
+                            <div class="add-text" fxLayout="column" fxLayoutGap="10">
+                                <span>{{item.Address}}</span>
+                                <div *ngIf="item.primary">
+                                    <button mat-raised-button color="primary" (click)="order()">DELIVER HERE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-3">
+                <div class="title-bar" [ngClass]='{active:step==3}'>
+                    <span class="step-no" fxFlex="25px">3</span>
+                    <span class="step-name-2">ORDER SUMMARY</span>
+                </div>
+                <div fxLayout="row" class="order-list mat-elevation-z8" *ngFor="let order of orders">
+                    <div fxLayout="column" fxFlex="120px">
+                        <div style="height: 112px; width: 112px; padding:12px">
+                            <img [src]="order.image" class="order-img" />
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxFlex="50">
+                        <h3 style="margin-bottom:0px">{{order.title}}</h3>
+                        <span>Finish Color - BLACK, DIY(Do-It-Yourself)</span>
+                        <div fxLayout="row" style="margin-bottom:10px; margin-top:10px;">
+                            <span>Seller: GoldenFish</span> <span class="e-kart"><i>ek</i>Assured</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="25">
+                            <span class="strike">{{order.actualPrice | currency}}</span>
+                            <span class="current"><b>{{order.price | currency}}</b></span>
+                            <span class="profit" [innerHTML]="getHTML(order)"></span>
+
+                        </div>
+                        <div class="remo">
+                            <button mat-button>Remove</button>
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxFlex="30">
+                        <div fxLayout="row" fxLayoutGap="10">
+                            <span>Delivered by </span>
+                            <span class="delivered-by" [innerHTML]="randomDate()|date"></span>
+                            <span>| Free <span class="strike">₹40</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-btn-div mat-elevation-z4">
+                <div class="VUS-tD btn-div">
+                    <button class="order-btn"><span>Place Order</span></button>
+                </div>
+            </div>
+            <div class="step-4">
+                <div class="title-bar" [ngClass]='{active:step==4}'>
+                    <span class="step-no" fxFlex="25px">4</span>
+                    <span class="step-name-2">PAYMENT OPTIONS</span>
+                </div>
+
+                <div class="saved-card-lists" fxLayout="column" fxLayoutGap="10">
+                    <div *ngFor="let card of savedCards; let i = index" class="mat-elevation-z8">
+                        <div fxLayout="row" class="cards">
+                            <input type="radio" name="cards" (change)="selectedOption(i)">
+                            <img height="25" width="25" class="bank-card" [src]="card.image" />
+                            <span class="bank-name">{{card.BankName}}</span>
+                        </div>
+
+                        <div *ngIf="card.selected" fxLayout="column" class="card-options">
+                            <span><b>Choose An Option :</b></span>
+                            <div fxLayout="column">
+                                <div>
+
+                                    <label>
+                                            
+                                        <input type="radio" name="mode" value="full"/>
+                                        Pay full amount of <span>{{total | currency}}</span>
+                                        
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="mode" value="partial"/>
+                                            Pay with EMI - EMI at <span>{{total/3 | currency}}</span><span> / Month</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="check-form">
+                                <mat-form-field appearance="fill">
+
+                                    <input matInput placeholder="CVV" name="brand">
+                                </mat-form-field>
+                                <button mat-raised-button color="primary" style="margin-left:20px">CONTINUE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column" fxFlex="35" class="col-right">
+            <mat-card>
+                <div>
+                    <mat-card-title>PRICE DETAILS</mat-card-title>
+                    <mat-divider></mat-divider>
+                </div>
+
+
+                <mat-card-content fxLayout="column" fxLayoutGap="10">
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <span>Price</span><span>({{ orders?.length }}</span>&nbsp; Items)
+                        </div>
+                        <span>{{total | currency}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <span>Discount</span>
+                        </div>
+                        <span>- {{discount | currency}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <span>Delivery Charge</span>
+                        </div>
+                        <span>- {{deliveryCharge}}</span>
+                    </div>
+                    <mat-divider></mat-divider>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <span>Total Amount</span>
+                        </div>
+                        <span> {{totalCost | currency}}</span>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div>
+                        <span class="profit">You will save <span>{{discount}}</span> on this order</span>
+                    </div>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add New Product</h1>
+<form [formGroup]="ProductForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="productName" placeholder="Product Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Product Categories</mat-label>
+            <mat-select placeholder="Category" formControlName="productCategory">
+                <mat-option value="Fruits">Fruits</mat-option>
+                <mat-option value="Vegetables">Vegetables</mat-option>
+                <mat-option value="Electronics">Electronics</mat-option>
+            </mat-select>
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="selectedDate">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <label for="productFreshness"><h1>Product Freshness</h1></label>
+        <mat-radio-group class="example-radio-group" formControlName="freshness">
+            <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">{{fresh}}</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input type="number" formControlName="price" matInput placeholder="Price">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <textarea matInput formControlName="comment" placeholder="Comment"></textarea>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" style="margin-left:8px" (click)="saveData()">{{buttonTxt}}</button>
+    </div>
+</form>

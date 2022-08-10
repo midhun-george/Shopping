@@ -1,0 +1,41 @@
+.cart-container {
+    width: 1240px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.img-text img {
+    height: 300px;
+}
+
+.body-div {
+    align-items: center;
+}
+
+.wrapper {
+    border: 1px solid;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin: 30px; */
+    max-height: 75vh;
+    padding: 25px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 17%;
+}
+
+.back-button button {
+    padding: 5px;
+    width: 200px;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 1rem;
+}

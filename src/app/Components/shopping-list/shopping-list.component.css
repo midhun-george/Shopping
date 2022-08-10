@@ -1,0 +1,17 @@
+mat-card.grid-mat-card img {
+    height: 200px;
+}
+
+mat-card.grid-mat-card {
+    width: 250px;
+    margin-bottom: 10px
+}
+
+mat-card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.shop-list {
+    margin: auto;
+}

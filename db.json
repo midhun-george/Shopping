@@ -1,0 +1,125 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "May 5th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "id": 2,
+      "text": "Meeting at School",
+      "day": "May 6th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Food Shopping",
+      "day": "May 7th at 12:30pm",
+      "reminder": false
+    },
+    {
+      "text": "dfdfd",
+      "day": "gfhfgh",
+      "reminder": false,
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "username": "midhun",
+      "name": "Midhun",
+      "password": "1234",
+      "role": "admin",
+      "roleID": 1
+    },
+    {
+      "username": "test",
+      "name": "Test",
+      "password": "1234",
+      "role": "user",
+      "roleID": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "LapTop",
+      "brand": "HP",
+      "favorite": false,
+      "price": 32000
+    },
+    {
+      "id": 2,
+      "productName": "LapTop",
+      "brand": "Dell",
+      "favorite": true,
+      "price": 37000
+    }
+  ],
+  "productsList": [
+    {
+      "productName": "HP",
+      "productCategory": "Electronics",
+      "selectedDate": "2022-08-01T18:30:00.000Z",
+      "freshness": "Second Hand",
+      "price": 344,
+      "comment": "Hp Laptop",
+      "id": 1
+    },
+    {
+      "productName": "Grapes",
+      "productCategory": "Fruits",
+      "selectedDate": "2022-07-31T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 65,
+      "comment": "Test grapes product",
+      "id": 2
+    },
+    {
+      "productName": "Mobile",
+      "productCategory": "Electronics",
+      "selectedDate": "2022-07-26T18:30:00.000Z",
+      "freshness": "Refurbished",
+      "price": 3333,
+      "comment": "Test",
+      "id": 3
+    },
+    {
+      "productName": "Beetroot",
+      "productCategory": "Vegetables",
+      "selectedDate": "2022-07-31T18:30:00.000Z",
+      "freshness": "Second Hand",
+      "price": 10,
+      "comment": "",
+      "id": 4
+    },
+    {
+      "productName": "Mango",
+      "productCategory": "Fruits",
+      "selectedDate": "2022-08-08T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 120,
+      "comment": "test",
+      "id": 5
+    },
+    {
+      "productName": "Test New",
+      "productCategory": "Vegetables",
+      "selectedDate": "2022-08-01T18:30:00.000Z",
+      "freshness": "Second Hand",
+      "price": 444,
+      "comment": "ggh",
+      "id": 6
+    },
+    {
+      "productName": "Test1",
+      "productCategory": "Vegetables",
+      "selectedDate": "2022-08-01T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": "",
+      "comment": "ghgghgh",
+      "id": 7
+    }
+  ]
+}

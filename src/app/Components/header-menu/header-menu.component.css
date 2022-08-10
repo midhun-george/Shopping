@@ -1,0 +1,290 @@
+span.example-spacer {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.table-container {
+    width: 1200px;
+    margin: auto;
+}
+
+.icon {
+    display: inline-block;
+    height: 30px;
+    margin: 0 auto;
+    padding-right: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.label {
+    display: inline-block;
+    line-height: 30px;
+    margin: 0;
+}
+
+.tool-card {
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.grid-style img {
+    height: 203px;
+}
+
+.grid-style div {
+    cursor: pointer;
+}
+
+.search-items-xs {
+    margin: auto;
+}
+
+.list-style img {
+    height: 180px;
+    margin: 0px;
+}
+
+.img-container {
+    background-size: contain;
+}
+
+.filter-container {
+    height: inherit;
+}
+
+.filter-container .search-filter {
+    background-color: #E5E4EA;
+}
+
+.filters {
+    margin: 15px;
+    background: #fff;
+}
+
+.filter-container mat-expansion-panel {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.menu-container {
+    margin-top: 5px;
+}
+
+.sort-box {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    outline: none;
+}
+
+.list-view-card-content {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.grid-card-content {
+    padding: 10px;
+}
+
+.sort-button {
+    height: 41px;
+    width: 160px;
+}
+
+.service-toolbar {
+    min-height: 40px !important;
+    height: 40px !important;
+}
+
+.service-toolbar mat-toolbar-row.mat-toolbar-row {
+    height: 40px !important;
+}
+
+.grid-mat-card {
+    margin: 10px 10px 0px 0px;
+    padding: 0px !important;
+}
+
+.grid-mat-card-xs {
+    margin: 10px 0px 0px 0px;
+    padding: 0px !important;
+}
+
+.list-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.filters mat-expansion-panel-header {
+    padding: 0px 10px 0px 10px;
+}
+
+.pagination {
+    height: 50px;
+}
+
+.list-item-texts {
+    margin: 0px !important;
+}
+
+.search-text {
+    height: 41px;
+    margin-right: 10px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.search-text input {
+    padding-left: 5px;
+}
+
+.grid-list-btn {
+    min-width: 45px;
+    height: 41px;
+}
+
+.list-style {
+    margin-right: 8px;
+}
+
+.expansion-header {
+    height: 40px !important;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.grid-list-align {
+    margin-right: 10px
+}
+
+.list-item-container button {
+    text-align: start;
+}
+
+.leftnav span {
+    position: relative;
+    left: 10px;
+}
+
+.leftnav .mat-checkbox-inner-container {
+    height: 18px !important;
+    width: 18px !important;
+}
+
+.advanced-search-container {
+    margin: 0px 0px 10px 0px;
+    background: #fff;
+}
+
+.advanced-search-container button {
+    height: 41px;
+}
+
+.mobile-buttons {
+    margin-bottom: 0px !important;
+}
+
+.search-button {
+    min-width: 24px;
+    padding: 0
+}
+
+.advanced-mobile {
+    padding-left: 0 !important;
+}
+
+.mobile-view {
+    padding: 0px;
+    min-width: 60px;
+}
+
+.search-text-nomargin {
+    margin: 0px !important;
+}
+
+.btn-txt {
+    margin-top: 5px;
+}
+
+.no-items-list {
+    color: red;
+    margin-top: 10px
+}
+
+.no-items {
+    color: red;
+}
+
+.text-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-style {
+    font-weight: 500
+}
+
+.alert-message {
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.inputSearchStyleMobile {
+    width: calc(100% - 60px) !important;
+    height: 37px !important;
+    padding-left: 10px !important;
+    display: inline-block !important;
+    border: 1px solid transparent !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    outline: none !important;
+}
+
+.buttonStyleMob {
+    width: 40px !important;
+}
+
+.sort-section {
+    flex-basis: 5% !important;
+}
+
+.no-items-xs {
+    margin-top: 20px !important;
+}
+
+.list-view,
+.grid-view {
+    width: 1200px;
+    margin: auto;
+}
+
+.mat-menu-trigger.banner-userprofile img {
+    width: 50px !important;
+    height: 50px;
+    border-radius: 50% !important;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.select-outline-none {
+    width: 100px;
+    height: 50px;
+}
+
+.banner-style .mat-mini-fab.mat-accent {
+    background-color: #607d8b;
+}
+
+header {
+    width: 100%;
+}

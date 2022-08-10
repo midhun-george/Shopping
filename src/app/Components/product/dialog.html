@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    <!-- [ngStyle]="{color:data.color}" -->
+    <p [ngStyle]="{color:data.color}">{{data.message}}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" *ngIf="data.nothanks">No Thanks</button>
+    <button mat-button [mat-dialog-close]=true cdkFocusInitial>Ok</button>
+</div>

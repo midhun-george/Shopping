@@ -1,0 +1,24 @@
+<div fxLayout="column">
+    <app-shopping-header (filterVal)="filter($event)"></app-shopping-header>
+
+    <div fxLayout="row wrap" fxFlex.xs="100" fxFlex="1000px" class="grid-style shop-list" fxLayoutGap="20" fxLayout.gt-xs="row wrap" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutAlign.xs="center center">
+        <div *ngFor="let item of filterCategory | filter:searchTerm:'title'" class="search-items" ngClass.xs="search-items-xs">
+
+            <mat-card fxLayout="column" class="grid-mat-card" ngClass.xs="grid-mat-card-xs">
+                <img mdImgCard src="{{item.image }}" [style.xs]="{'height.px':325}">
+                <mat-card-content fxLayout="column" fxLayoutGap="10px" class="grid-card-content">
+
+                    <div fxLayout="row" style="margin-top:20px">
+
+                    </div>
+                    <div fxLayout="column">
+                        <h3 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h3>
+                        <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                        <p><strong>Price:</strong> ${{item.price}}</p>
+                        <button mat-raised-button class="add-to-cart" color="primary" (click)=addtocart(item)>Add to cart</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

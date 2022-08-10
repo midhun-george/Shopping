@@ -1,0 +1,8 @@
+<!-- [ngClass]="{reminder:task.reminder}" -->
+<div class="task" (dblclick)="onDoubleClick()">
+    <h3>{{task.text}}
+        <span class="fa fa-times" (click)="deleteTask()"></span>
+    </h3>
+
+    <p>{{task.day}}</p>
+</div>

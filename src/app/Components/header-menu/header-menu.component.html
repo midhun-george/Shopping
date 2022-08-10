@@ -1,0 +1,314 @@
+<p>
+    <mat-toolbar color="primary" class="mat-elevation-z2">
+        <!-- <div>
+            <button mat-icon-button class="example-icon" [routerLink]="['/header']" aria-label="Example icon-button with menu icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+            <span>My App</span>
+        </div>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="warn" (click)="addProductDialog()" *ngIf="selectedValue==='table' && (page!='task' && page!='prod')">Add Product</button>
+        <button mat-icon-button class="example-icon favorite-icon" (click)="page='task'" title="Task List" aria-label="Example icon-button with heart icon">
+                <mat-icon> local_activity</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" title="Products" (click)="page='prod'" aria-label="Example icon-button with share icon">
+                <mat-icon>add_shopping_cart</mat-icon>
+       </button>
+        <div fxLayoutAlign="center" style="padding: 10px" (click)="logout()" style="cursor:pointer">
+            <a>
+                <mat-icon class="icon">input</mat-icon>
+                <span class="label">LogOut</span>
+            </a>
+        </div> -->
+        <header class="banner-style" fxLayoutAlign="center center">
+            <!-- <mat-toolbar color="warn" class=" banner-toolbar mat-elevation-z2" [ngStyle.lt-md]="{'padding': '4px 10px 0 0'}"> -->
+            <button mat-icon-button [fxShow.lt-md]="true" [fxHide]="true">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+            <div>
+                <button mat-icon-button class="example-icon" [routerLink]="['/header']" aria-label="Example icon-button with menu icon">
+                      <mat-icon>favorite</mat-icon>
+                    </button>
+                <span>My App</span>
+            </div>
+            <span class="example-spacer"></span>
+            <div [fxHide.lt-md]="true" fxLayoutAlign="center center" style="position:absolute; right:68px">
+
+                <div class="mat-button" [routerLink]="['/contactus']" routerLinkActive="active">
+                    <button mat-mini-fab color="accent">
+                        <i class="material-icons footer-icon icon-size">contact_mail</i>
+                        
+                      </button> Contact Us
+                </div>
+                <div class="mat-button" [routerLink]="['/user']" routerLinkActive="active">
+                    <button mat-mini-fab color="accent">
+                      <i class="fa fa-users footer-icon icon-size" aria-hidden="true"></i>
+                    </button>Users
+                </div>
+                <div class="mat-button" [routerLink]="['/shopping']" routerLinkActive="active">
+                    <button mat-mini-fab color="accent">
+                      <i class="fa fa-cart footer-icon icon-size" aria-hidden="true"></i>
+                    </button>Shopping Cart
+                </div>
+                <div class="mat-button" routerLinkActive="active" (click)="page='task'">
+                    <button mat-mini-fab color="accent">
+                            <i class="fa fa-check-circle footer-icon icon-size" aria-hidden="true"></i>
+                          </button> Todo List
+                </div>
+                <div class="mat-button" (click)="page='prod'">
+                    <button mat-mini-fab color="accent">
+                        <!-- <i class="fa fa-sign-in footer-icon icon-size" aria-hidden="true"></i> -->
+                        <i class="fa fa-product-hunt footer-icon icon-size" aria-hidden="true"></i>
+                      </button> Prodcuts
+                </div>
+
+                <div class="mat-button airtmd-green-theme" style="padding: 0 0 0 16px;">
+                    <button mat-raised-button color="warn" class="banner-joinus-button" (click)="addProductDialog()">
+                        {{"Add Product"|uppercase}} </button>
+                </div>
+                <!-- <div class="mat-button" style="margin-right: 10px;">
+                    <button mat-mini-fab color="accent" [matMenuTriggerFor]="menuNotify" class="notification">
+                        <i class="fa fa-bell icon-size" aria-hidden="true"></i>
+                        <div  class="button-badge">{{"2"}}</div>
+                      </button>
+                    <mat-menu #menuNotify="matMenu" class="notification subMenuPosition submenuStyle topNotification">
+                        <div class="mat-body-1 notifyHeader" fxLayout>
+                            <div fxFlex>Notifications</div>
+                            <span fxFlex align="end" class="mat-caption readMessage">
+                            <a id="notificationMessage" class="link">Mark all as read</a>
+                          </span>
+                        </div>
+                        <div>
+                            <mat-list class="notificationList" perfect-scrollbar>
+                                    <mat-list-item *ngFor="let notification of notifications" [class.messageUnread]="notification.status == 'unread'">
+                                        <div fxFlex=16>
+                                            <img class="notificationUser-image" src="{{notification.imageURL}}">
+                                        </div>
+                                        <div class="mat-caption nofiticationContent" fxFlex>
+                                            {{notification.description|stringlength:95 }}
+                                            <div class="mat-caption">
+                                                <h6>{{notification.date}}</h6>
+                                            </div>
+                                        </div>
+                                    </mat-list-item>
+                                </mat-list>
+                        </div>
+                        <div class="mat-caption extendNotificationMessage">
+                            <a class="link">See All</a>
+                        </div>
+                    </mat-menu>
+                </div> -->
+            </div>
+            <div>
+                <div mat-mini-fab [matMenuTriggerFor]="menu" class="banner-userprofile" [fxHide.lt-md]="true" [fxShow]="true">
+                    <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="banner-userprofile userprofile-border"> -->
+                    <img src='https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png' class="banner-userprofile userprofile-border">
+                </div>
+                <div mat-mini-fab class="banner-userprofile" [fxShow]="true">
+                    <!-- <img src='https://picsum.photos/200' class="banner-userprofile userprofile-border"> -->
+                </div>
+                <mat-menu #menu="matMenu" class="userMenu subMenuPosition submenuStyle">
+                    <mat-card class="usermenu-card ">
+                        <div fxLayout="column" style="padding:10px 10px 0px 10px;min-width: 300px;">
+                            <div fxLayout="row">
+                                <div fxFlex="25">
+                                    <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="usermenu-card-image"> -->
+                                </div>
+                                <div fxFlex="70" class="usermenu-card-header">
+                                    <mat-card-header>
+                                        <mat-card-title class="usermenu-card-header-title">
+                                            <!-- <span class="mat-title">{{globals.userDetails.firstname}} {{globals.userDetails.lastname}}</span> -->
+                                        </mat-card-title>
+                                        <!-- <mat-card-subtitle class="usermenu-card-header-subtitle">{{globals.userDetails.email}}</mat-card-subtitle> -->
+                                    </mat-card-header>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+                                <div fxLayout="column" class="usermenu-options-container" fxLayoutAlign="center" fxFlex='100px' (click)="page='task'">
+                                    <i class="fa fa-file-text footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color':'#26c6da'}"></i>
+                                    <span class="mat-body-2">Todo List</span>
+                                </div>
+                                <div fxLayout="column" class="usermenu-options-container" fxFlex='100px' (click)="page='prod'">
+                                    <i class="fa fa-file-text footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#66bb6a'}"></i>
+                                    <span class="mat-body-2">Products</span>
+                                </div>
+                                <div fxLayout="column" class="usermenu-options-container" fxFlex='100px' [routerLink]="['userdashboard']">
+                                    <i class="fa fa-user footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#ff8a80'}"></i>
+                                    <span class="mat-body-2">{{"My Profile"}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-card-actions align="end" class="usermenu-card-actions">
+                            <button mat-raised-button color="primary" (click)="logout()">
+                            <i class="fa fa-sign-out footer-icon " aria-hidden="true" style="font-size: 20px;"></i>
+                            <span>Sign Out</span>
+                          </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-menu>
+            </div>
+            <!-- </mat-toolbar> -->
+        </header>
+    </mat-toolbar>
+</p>
+<!-- *ngIf="selectedValue==='table' && (page!='task' && page!='prod')" -->
+<div fxLayout="row" class="typeView" fxLayoutAlign="end start">
+    <div fxLayoutAlign="start start" class="grid-list-align" [fxShow.lt-md]="false" *ngIf="selectedValue!='table'" fxFlex>
+
+        <button fxFlexOrder.lt-md="1" mat-raised-button (click)="listViewToggle()" class="grid-list-btn"><i class="fa fa-th" aria-hidden="true" *ngIf="!showGridList"></i>
+                            <i class="fa fa-list" aria-hidden="true" *ngIf="showGridList"></i>
+                        </button>
+
+    </div>
+    <div fxFlex="10" *ngIf="page!='task' && page!='prod'">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose type</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option value="table">
+                    Table
+                </mat-option>
+                <mat-option value="list">
+                    List
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div *ngIf="page=='task'">
+    <app-task-list></app-task-list>
+</div>
+<div *ngIf="page=='prod'">
+    <app-products></app-products>
+</div>
+<div class="table-container" *ngIf="selectedValue==='table' && (page!='task' && page!='prod')">
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="productName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> productName </th>
+                <td mat-cell *matCellDef="let row"> {{row.productName}}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="productCategory">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> productCategory </th>
+                <td mat-cell *matCellDef="let row"> {{row.productCategory}} </td>
+            </ng-container>
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="selectedDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> selectedDate </th>
+                <td mat-cell *matCellDef="let row"> {{row.selectedDate | date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="freshness">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> freshness </th>
+                <td mat-cell *matCellDef="let row"> {{row.freshness}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> price </th>
+                <td mat-cell *matCellDef="let row"> {{row.price | currency:'INR'}} </td>
+            </ng-container>
+            <ng-container matColumnDef="comment">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> comment </th>
+                <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+                <td mat-cell *matCellDef="let row">
+                    <button mat-icon-button color="primary" (click)="editProduct(row)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    <button mat-icon-button color="warn" (click)="deleteProduct(row)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+</div>
+
+<ng-container *ngIf="selectedValue!='table'">
+    <div class="list-view" *ngIf="!showGridList">
+        <div class="list-style" fxLayout="column" [style.lt-md]="{'margin-right.px': 0}">
+            <div fxFlex fxLayoutAlign="center center" class="no-items-list" color="warn" *ngIf="allProducts.length==0">No Records Found</div>
+            <div *ngFor="let item of allProducts | paginate: { itemsPerPage: 3, currentPage: p }">
+
+                <mat-card class="tool-card" fxLayoutGap="15px" fxLayout="row" fxLayoutGap.lt-md="5">
+                    <img mdImgCard src="{{'https://picsum.photos/200'}}" [style.lt-md]="{'height.px':150,'marginRight.px':5}">
+                    <mat-card-content fxLayout="column" fxFlex class="list-view-card-content">
+
+                        <h2 class="mat-body2 text-wrap" title="{{item.productName}}" [fxShow.lt-md]="false">{{ item.productName}}</h2>
+                        <h2 class="mat-body2" title="{{item.productName}}" [fxHide]="true" [fxShow.lt-md]="true">{{ item.productName }}</h2>
+
+                        <div fxLayout="row">
+                            <div fxFlex="50" fxLayout="column" fxLayoutGap.lt-md="5px" fxLayoutGap="10px" fxLayoutAlign="start start" class="list-col">
+                                <p class="mat-body-2 list-item-texts">Price</p>
+                                <span class="mat-caption">{{item.price}}</span>
+
+                                <p class="mat-body-2 list-item-texts">productCategory</p>
+                                <span class="mat-caption">{{item.productCategory}}</span>
+
+                            </div>
+                            <div fxFlex="50" fxLayout="column" fxLayoutGap.lt-md="5px" fxLayoutGap="10px" fxLayoutAlign="center start" [style.lt-md]="{'margin-left.px': 0}" class="list-col">
+                                <p class="mat-body-2 list-item-texts">Date</p>
+                                <span class="mat-caption text-truncate" [fxShow.lt-md]="false"> {{item.selectedDate}}</span>
+                                <span class="mat-caption text-wrap" [fxHide]="true" [fxShow.lt-md]="true"> {{item.selectedDate | date}}</span>
+                                <p class="mat-body-2 list-item-texts">Freshness</p>
+                                <span class="mat-caption">{{item.freshness}}</span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-view" *ngIf="showGridList">
+        <div class="grid-style" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+
+            <div fxFlex fxLayoutAlign="center center" class="no-items" *ngIf="allProducts.length==0">No Records Found</div>
+
+            <div *ngFor="let item of allProducts | paginate: { itemsPerPage: 5, currentPage: p }" class="search-items" ngClass.xs="search-items-xs">
+
+                <mat-card fxLayout="column" class="grid-mat-card" ngClass.xs="grid-mat-card-xs">
+                    <img mdImgCard src="{{'https://picsum.photos/200'}}" [style.lt-md]="{'height.px':325}" [style.sm]="{'height.px':250}">
+                    <mat-card-content fxLayout="column" fxLayoutGap="10px" class="grid-card-content">
+                        <span class="mat-subheading title-style" title="{{item.title}}">{{item.productName}}</span>
+                        <!-- <div class="mat-title text-wrap" title="{{item.title}}" fxLayoutAlign="start center">{{item.title}}</div> -->
+
+                        <div fxLayout="row">
+                            <span class="mat-caption">{{item.price}}</span>
+                            <span class="mat-caption" fxFlex fxLayoutAlign="end center"> {{item.productCategory}}</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+    <pagination-controls color="primary" (pageChange)="p = $event"></pagination-controls>
+</ng-container>

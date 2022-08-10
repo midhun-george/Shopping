@@ -1,0 +1,4 @@
+<header>
+    <h1>{{title}}</h1>
+    <app-button [tab]="tab" *ngIf="homeFlag()" color="{{ addFlag ? 'red' : 'green' }}" text="{{addFlag ? 'Close' : 'Add' }}"></app-button>
+</header>

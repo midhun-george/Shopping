@@ -1,0 +1,48 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" style="height: 100vh; background:linear-gradient(45deg, blue, #9B2B40);">
+    <div fxFlex="40" fxFlexAlign="center center" fxFlex.xs="100" style="padding:10px">
+        <div>
+            <mat-card class="example-card">
+                <mat-card-title>Login</mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <form #ContactForm="ngForm">
+
+                        <div class="controls rowControls row">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Username" minlength="5" name="Username" required [(ngModel)]="Username" value="" #name="ngModel">
+                            </mat-form-field>
+                            <div *ngIf="name.errors && (name.dirty || name.touched)">
+                                <div class="error" *ngIf="name.errors?.['required']">
+                                    Username is required
+                                </div>
+                                <div class="error" *ngIf="name.errors?.['minlength']">
+                                    Name must be at least 5 characters long.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls rowControls row ">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" type="password" name="Password" [(ngModel)]="Password" required value="" #password="ngModel">
+                            </mat-form-field>
+                            <div class="error" *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+                                Password is required
+                            </div>
+                        </div>
+
+                        <div class="forgot-pass">
+                            <a [routerLink]="['/about']"> Forgot Password? </a>
+                        </div>
+                        <div>
+                            <button type="submit" mat-raised-button color="primary" class="btn-login" (click)="validateAndMove(ContactForm)">Login</button>
+                        </div>
+                        <div class="signup-link">
+                            <span>Not a member?</span><a [routerLink]="['/about']"> Signup </a>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

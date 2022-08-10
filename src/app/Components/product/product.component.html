@@ -1,0 +1,24 @@
+<!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button> -->
+<div class="container">
+    <app-header tab="products"></app-header>
+    <!-- <app-add-tasks *ngIf="addFlag" (addTaskDetails)="saveTask($event)"></app-add-tasks>
+        <app-task-item *ngFor="let task of taskDetails" [task]="task" (reminderToggle)="toggeleReminder(task)" (deleteTaskDetails)="deleteTask(task)"> -->
+    <!--     
+        </app-task-item> -->
+    <app-add-product *ngIf="addFlag" (addProductDetails)="saveProduct($event)"></app-add-product>
+    <div class="no-result" *ngIf="productsEmpty">No products found</div>
+    <div *ngIf="!productsEmpty">
+        <div *ngFor="let prod of products; let i index" [ngClass]="{favorite:prod.favorite}" class="task" (dblclick)="onDoubleClick()">
+            <h3>{{prod.productName}}
+                <span class="fa fa-times" (click)="deleteProd(prod)"></span>
+            </h3>
+
+            <p>{{prod.brand}}</p>
+            <p style="display:flex; place-content:space-between">{{prod.price | currency:"INR"}}
+                <mat-icon title="remove from favorites" *ngIf="prod.favorite" style="color:green">thumb_up</mat-icon>
+                <mat-icon *ngIf="!prod.favorite" title="mark as favorite" style="color:red">thumb_down</mat-icon>
+            </p>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

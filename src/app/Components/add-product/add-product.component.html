@@ -1,0 +1,31 @@
+<form [formGroup]="addForm">
+    <div class="controls rowControls row">
+        <mat-form-field appearance="fill">
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Product Name" formControlName="productName" name="productName">
+        </mat-form-field>
+
+    </div>
+    <div class="controls rowControls row">
+        <mat-form-field appearance="fill">
+            <mat-label>Brand</mat-label>
+            <input matInput placeholder="Brand" formControlName="brand" name="brand">
+        </mat-form-field>
+
+    </div>
+    <div class="controls rowControls row">
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput placeholder="Price" formControlName="price" name="price">
+        </mat-form-field>
+
+    </div>
+    <div class="controls rowControls row">
+        <!-- <mat-form-field appearance="fill"> -->
+        <mat-checkbox formControlName="favorite" name="favorite" class="example-margin">Favorite?</mat-checkbox>
+        <!-- </mat-form-field> -->
+
+    </div>
+    <button class="prod-submit" mat-raised-button (click)="addProduct(addForm)" color="primary">Save</button>
+
+</form>
