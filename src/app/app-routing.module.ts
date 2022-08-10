@@ -1,4 +1,4 @@
-import { NgModule1 } from '@angular/core';
+import { NgModule2 } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { TaskItemComponent } from './Components/task-item/task-item.component';
