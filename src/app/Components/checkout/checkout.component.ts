@@ -26,6 +26,8 @@ export class CheckoutComponent implements OnInit {
   upiChecked:boolean = false;
   phonePe:boolean = false;
   myUPI:boolean = false;
+  CVV:number;
+  UPI;
   addressTypeList=[{type:"Home", label:"Home (All day delivery)"},{type:"Work", label:"Work (Delivery between 10 AM - 5 PM)"} ]
   address=[{"id":1,"Name":"Midhun George", "type":"Home", "Mobile":"9544476777","Pin":670633, "Locality":"Payyavoor", "City":"Kannur","Landmark":"", "Address":"Nagathinkal(h), Payyavoor(po), Kannur, Kerala, 670633", "primary":true},
   {"id":2,"Name":"Divya Devasia", "type":"Home", "Mobile":"7406867647", "Pin":670632, "Locality":"Chemperi", "City":"Kannur","Landmark":"", "Address":"Muthukulathil(h), Chemperi(po), Kannur, Kerala, 670632", "primary":false},

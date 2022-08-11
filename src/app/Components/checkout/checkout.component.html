@@ -188,9 +188,9 @@
                             <div class="check-form">
                                 <mat-form-field appearance="fill">
 
-                                    <input matInput placeholder="CVV" name="brand">
+                                    <input matInput placeholder="CVV" name="brand" [(ngModel)]="CVV">
                                 </mat-form-field>
-                                <button mat-raised-button color="primary" style="margin-left:20px" (click)="complete()">CONTINUE</button>
+                                <button mat-raised-button color="primary" style="margin-left:20px" [disabled]="!CVV" (click)="complete()">CONTINUE</button>
                             </div>
                         </div>
                     </div>
@@ -205,15 +205,15 @@
                     <div class="upi-options" *ngIf="upiChecked">
                         <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
                             <input type="radio" name="upiOption" (change)="phonePe=true"><span>PhonePe</span>
-                            <button mat-raised-button *ngIf="phonePe" style="background:#fb641b">CONTINUE</button>
+                            <button mat-raised-button *ngIf="phonePe" style="background:#fb641b" (click)="complete()">CONTINUE</button>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
                             <input type="radio" name="upiOption" (change)="myUPI=true"><span>Your UPI ID</span>
                         </div>
                         <div class="upiid-text" fxLayout="column" *ngIf="myUPI==true">
                             <div class="upi-text-verify">
-                                <input type="text" placeholder="Enter your UPI ID" name="UPIID" id="UPIID">
-                                <button mat-button class="verify" (click)="complete()">VERIFY</button>
+                                <input type="text" placeholder="Enter your UPI ID" name="UPIID" id="UPIID" [(ngModel)]="UPI">
+                                <button mat-button class="verify" (click)="complete()" [disabled]="!UPI || UPI.length<3">VERIFY</button>
                             </div>
 
                         </div>
