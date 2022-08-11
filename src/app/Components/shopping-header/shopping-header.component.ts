@@ -16,7 +16,7 @@ export class ShoppingHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getCartCount();
   }
-
+//get number of items in the cart
   getCartCount(){
     this.cart.getProducts()
     .subscribe(res=>{
@@ -24,24 +24,14 @@ export class ShoppingHeaderComponent implements OnInit {
     })
   }
   search(ev){
-    console.log(ev)
     this.cart.search.next(this.searchTerm);
   }
-  signin(){
-
-  }
-  becomeapartner(){
-
-
-  }
+  
   filter(v){
     
     this.filterVal.emit(v)
   }
-  subMenuExpanded(value) {
-    var bannersubmenu = document.getElementById('bannersubmenu');
-    bannersubmenu.style.zIndex = value
-  }
+  
   signOut(){
 
   }

@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
     this.globals.showLoader = false;
   }
 
+  //check authentication of the user
   validateAndMove(f){
     this.globals.showLoader = true;
     this.logService.getUsers().subscribe(res=>{
-      debugger;
+      
       this.users = res;
       let scope = this;
       res.find(function(val){
@@ -44,9 +45,8 @@ export class LoginComponent implements OnInit {
       })
     })
   }
-  showMe(){
-    
-  }
+  showMe(){}
+  //show error message
   errorMessage(){
     const confirmDialog = this.dialog.open(DialogComponent, {
       data: {
@@ -62,5 +62,12 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  
+  testUser(){
+    this.logService.addUser()
+    .subscribe({
+      next:(res)=>{
+        console.log(res);
+      }
+    })
+  }
 }

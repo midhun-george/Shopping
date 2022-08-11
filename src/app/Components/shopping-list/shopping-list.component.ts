@@ -27,6 +27,7 @@ export class ShoppingListComponent implements OnInit {
     })
   }
 
+  //Get all products for shopping list
   getAllProduct(){
     this.api.getProduct().subscribe(res=>{
       this.products = res;

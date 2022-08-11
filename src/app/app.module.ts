@@ -41,7 +41,7 @@ import { DialogComponent } from './Components/dialog/dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HeadermenuComponent } from './Components/header-menu/header-menu.component';
-import { ProductComponent, DialogAnimationsExampleDialog } from './Components/product/product.component';
+import { ProductComponent, ProductDialogComponent } from './Components/product/product.component';
 import { TaskItemComponent } from './Components/task-item/task-item.component';
 import { TaskListComponent } from './Components/task-list/task-list.component';
 
@@ -59,7 +59,7 @@ import { NavComponent } from './Components/nav/nav.component';
 import { ShoppingHeaderComponent } from './Components/shopping-header/shopping-header.component';
 import { ShoppingListComponent, AddedCartComponent } from './Components/shopping-list/shopping-list.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
-import { SlistComponent } from './Components/slist/slist.component';
+
 import { FilterPipe } from './shared/filter.pipe';
 import { LoaderComponent } from './Components/loader/loader.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
@@ -77,7 +77,7 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
     FooterComponent,
     HeaderComponent,
     HeadermenuComponent,
-    ProductComponent,DialogAnimationsExampleDialog,
+    ProductComponent,ProductDialogComponent,
     TaskItemComponent,
     TaskListComponent,
     AddProductDialogComponent,
@@ -87,7 +87,7 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
     ShoppingListComponent,
     AddedCartComponent,
     ShoppingCartComponent,
-    SlistComponent,
+    
     FilterPipe,
     LoaderComponent,
     CheckoutComponent

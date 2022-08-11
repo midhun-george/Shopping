@@ -39,6 +39,14 @@
       "password": "1234",
       "role": "user",
       "roleID": 2
+    },
+    {
+      "username": "Anand",
+      "name": "anand",
+      "password": "1234",
+      "role": "user",
+      "roleID": 2,
+      "id": 4
     }
   ],
   "products": [
@@ -55,6 +63,13 @@
       "brand": "Dell",
       "favorite": true,
       "price": 37000
+    },
+    {
+      "productName": "Mobile",
+      "brand": "Mi",
+      "price": 12000,
+      "favorite": true,
+      "id": 3
     }
   ],
   "productsList": [

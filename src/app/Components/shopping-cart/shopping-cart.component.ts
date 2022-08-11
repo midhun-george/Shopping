@@ -12,11 +12,18 @@ export class ShoppingCartComponent implements OnInit {
   constructor(private api: CartService, private globals:GlobalsService) { }
 
   ngOnInit(): void {
+    this.globals.showLoader=true;
     this.api.getProducts()
-    .subscribe(res=>{
+    .subscribe({
+      next:(res)=>{
       this.cartItmes = res;
       console.log(res);
       this.grandTotal = this.api.getTotalPrice();
+      this.globals.showLoader=false;
+      },
+      error:()=>{
+        alert("Error occured!")
+      }
     })
     
     this.globals.showLoader = false;

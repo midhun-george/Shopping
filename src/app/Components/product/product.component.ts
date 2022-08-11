@@ -32,13 +32,18 @@ export class ProductComponent implements OnInit {
       })
   }
 
+  //get products for products menu
   getProducts(){
-    debugger;
-    this.ps.getProducts().subscribe(res=>{
-      debugger;
-      this.products = res;
-      if(this.products.length){
-        this.productsEmpty = false;
+    this.ps.getProducts()
+    .subscribe({
+      next:(res)=>{
+        this.products = res;
+        if(this.products.length){
+          this.productsEmpty = false;
+        }
+      },
+      error:()=>{
+        alert("Error occured!");
       }
     })
   }
@@ -48,27 +53,23 @@ export class ProductComponent implements OnInit {
   deleteProd(ind){
     this.openDialog("0","0", ind, "Are you sure to delete?")
   }
+  //add a new product
   saveProduct(item){  
     this.products.push(item);
-    this.ps.addProduct(item).subscribe(res=>{
-      debugger;
+    this.ps.addProduct(item).subscribe({
+      next:(res)=>{
+
+      },
+      error:()=>{
+        alert("Error occured!")
+      }
+      
     })
-      // this.taskService.addTask(t).subscribe(res=>{
-      //   debugger;
-      //   if(res){
-      //     this.taskDetails.push(res);
-      //   }
-  
-       
-      // })
-      // this.taskService.addTask(t.value).subscribe(res=>{
-      //   this.taskDetails.push(t.value);
-      // })
   }
   
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string, ind, message): void {
     this.message = message;
-    const dialogRef = this.dialog.open(DialogAnimationsExampleDialog, {
+    const dialogRef = this.dialog.open(ProductDialogComponent, {
       width: '250px',
       data: {message: this.message, title:"Alert", nothanks:true, color:'red'},
     });
@@ -78,7 +79,7 @@ export class ProductComponent implements OnInit {
       if(result){
           this.ps.deleteProduct(ind).subscribe(res=>{
 
-            const dialogRef = this.dialog.open(DialogAnimationsExampleDialog, {
+            const dialogRef = this.dialog.open(ProductDialogComponent, {
               width: '250px',
               data: {message: "product deleted successfully", title:"Success", nothanks:false, color:'green'},
             });
@@ -95,11 +96,13 @@ export class ProductComponent implements OnInit {
   }
 }
 
+
+//dialog Component
+
 @Component({
-  selector: 'dialog-animations-example-dialog',
   templateUrl: 'dialog.html',
 })
-export class DialogAnimationsExampleDialog {
+export class ProductDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<ProductComponent>,
     @Inject(MAT_DIALOG_DATA) public data,

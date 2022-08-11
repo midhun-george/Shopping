@@ -49,10 +49,11 @@ export class TaskListComponent implements OnInit {
       
     })
   }
+  //add a new task to the taskslist
   saveTask(t:Task){
     
     this.taskService.addTask(t).subscribe(res=>{
-      debugger;
+      
       if(res){
         this.taskDetails.push(res);
       }

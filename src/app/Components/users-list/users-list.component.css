@@ -1,0 +1,14 @@
+header {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    color: blue;
+    top: 10px;
+}

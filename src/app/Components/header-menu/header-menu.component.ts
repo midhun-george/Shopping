@@ -33,8 +33,10 @@ ngOnInit(){
   this.globals.showLoader = false;
 }
 
+//get all products available onload
 getAllProduct(){
   this.api.getProductsList()
+  
   .subscribe({
     next:(res)=>{
       console.log(res);
@@ -42,9 +44,12 @@ getAllProduct(){
       this.dataSource = new MatTableDataSource(res as {productName: string, productCategory: string,selectedDate: string, price: number,comment: string}[]);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    }, error:()=>{
+      alert("Error occured");
     }
   })
 }
+//open add product popup
 addProductDialog(): void {
   const dialogRef = this.dialog.open(AddProductDialogComponent, {
     width: '30%'
@@ -63,6 +68,8 @@ applyFilter(event: Event) {
     this.dataSource.paginator.firstPage();
   }
 }
+
+//open add product dialog with prefilled data to edit
 editProduct(r){
   this.dialog.open(AddProductDialogComponent,{
     width:'30%',
@@ -74,6 +81,7 @@ editProduct(r){
     }
   })
 }
+
 deleteProduct(r){
   
   this.api.deleteProductList(r.id)
@@ -87,16 +95,18 @@ deleteProduct(r){
     }
   })
 }
-logout(){
-  localStorage.removeItem("token");
-  this.router.navigate(['/'])
-}
-listViewToggle(){
-  this.p=0;
-  this.showGridList=!this.showGridList;
-}
-subMenuExpanded(value) {
-  var bannersubmenu = document.getElementById('bannersubmenu');
-  bannersubmenu.style.zIndex = value
-}
+
+//delete token from local storage to logout the user
+  logout(){
+    localStorage.removeItem("token");
+    this.router.navigate(['/'])
+  }
+  listViewToggle(){
+    this.p=0;
+    this.showGridList=!this.showGridList;
+  }
+  subMenuExpanded(value) {
+    var bannersubmenu = document.getElementById('bannersubmenu');
+    bannersubmenu.style.zIndex = value
+  }
 }

@@ -9,7 +9,7 @@
                         <div>midhun.g@tcs.com</div>
                     </div>
                 </div>
-                <mat-expansion-panel class="subMenuEP" (opened)="subMenuExpanded(-1)" (closed)="subMenuExpanded(1)">
+                <mat-expansion-panel class="subMenuEP">
                     <mat-expansion-panel-header style="position: absolute;background: transparent;right: 0px;top: 65px;padding: 0 12px;">
                     </mat-expansion-panel-header>
                     <mat-list fxLayout="column" dense fxFlexFill>
@@ -42,12 +42,10 @@
                 </mat-expansion-panel>
             </div>
             <div fxLayout="column" class="banner-style" fxFlex style="z-index: 0;" id="bannersubmenu">
-                <!-- <div fxLayout="column" class="banner-style" fxFlex.lt-sm=65 fxFlex.lt-md=75 fxFlex.xs=55> -->
+
                 <div (click)="filter('')" (click)="sidenav.close()" routerLinkActive="active" fxLayout fxLayoutAlign="center" style="padding: 10px">
                     <div fxFlex=18>
-                        <!-- <button mat-mini-fab color="accent">
-                      <i class="fa fa-users footer-icon icon-size" aria-hidden="true"></i>
-                    </button> -->
+
                         <div class="icon-img all-p">
                             <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
                         </div>
@@ -58,9 +56,7 @@
                 </div>
                 <div (click)="filter('electronics')" (click)="sidenav.close()" routerLinkActive="active" fxLayoutAlign="center" style="padding: 10px">
                     <div fxFlex=18>
-                        <!-- <button mat-mini-fab color="accent">
-                      <i class="fa fa-handshake-o footer-icon icon-size" aria-hidden="true"></i>
-                    </button> -->
+
                         <div class="icon-img all-p">
                             <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
                         </div>
@@ -69,9 +65,7 @@
                 </div>
                 <div (click)="filter('fashion')" (click)="sidenav.close()" routerLinkActive="active" fxLayoutAlign="center" style="padding: 10px">
                     <div fxFlex=18>
-                        <!-- <button mat-mini-fab color="accent">
-                      <i class="material-icons footer-icon icon-size">contact_mail</i>
-                    </button> -->
+
                         <div class="icon-img all-p">
                             <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
                         </div>
@@ -79,11 +73,9 @@
                     <div fxFlex style="line-height: 3;">
                         Fashion</div>
                 </div>
-                <div fxLayoutAlign="center" (click)="filter('jewllery')" (click)="sidenav.close()" style="padding: 10px">
+                <div fxLayoutAlign="center" (click)="filter('jewelery')" (click)="sidenav.close()" style="padding: 10px">
                     <div fxFlex=18>
-                        <!-- <button mat-mini-fab color="accent">
-                      <i class="fa fa-question footer-icon icon-size" aria-hidden="true"></i> -->
-                        <!-- </button> -->
+
                         <div class="icon-img all-p">
                             <img src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
                         </div>
@@ -156,27 +148,7 @@
                     </button>
                 </div>
             </div>
-            <!-- <div class="navbar" color="primary" fxLayout="row" fxFlex="100">
-            <div class="navbar-brand align-item-center" fxFlex="50" fxLayout="column">
-                <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
-                
-            </i>
-                <strong style="font-size: 30px;"><em><i>e</i></em>kart</strong>
-                <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
-                </div>
-                <span class="fas fa-search search-icon"></span>
 
-
-            </div>
-            <div fxFlex="50" fxLayout="column">
-                <button routerLink="cart" class="btn" style="background:transparent; color:#FFF">
-                    <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
-                    <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
-                </button>
-            </div>
-
-        </div> -->
 
         </header>
 
@@ -210,8 +182,6 @@
         </div>
     </div>
     <div>
-        <!-- <app-slist></app-slist> -->
+
     </div>
 </mat-sidenav-container>
-
-<!-- <app-shopping-list></app-shopping-list> -->

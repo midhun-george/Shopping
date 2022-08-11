@@ -47,7 +47,7 @@
                 </div>
                 <div class="mat-button" [routerLink]="['/shopping']" routerLinkActive="active">
                     <button mat-mini-fab color="accent">
-                      <i class="fa fa-cart footer-icon icon-size" aria-hidden="true"></i>
+                            <i  class="fas fa-cart-plus"></i>
                     </button>Shopping Cart
                 </div>
                 <div class="mat-button" routerLinkActive="active" (click)="page='task'">
@@ -66,38 +66,6 @@
                     <button mat-raised-button color="warn" class="banner-joinus-button" (click)="addProductDialog()">
                         {{"Add Product"|uppercase}} </button>
                 </div>
-                <!-- <div class="mat-button" style="margin-right: 10px;">
-                    <button mat-mini-fab color="accent" [matMenuTriggerFor]="menuNotify" class="notification">
-                        <i class="fa fa-bell icon-size" aria-hidden="true"></i>
-                        <div  class="button-badge">{{"2"}}</div>
-                      </button>
-                    <mat-menu #menuNotify="matMenu" class="notification subMenuPosition submenuStyle topNotification">
-                        <div class="mat-body-1 notifyHeader" fxLayout>
-                            <div fxFlex>Notifications</div>
-                            <span fxFlex align="end" class="mat-caption readMessage">
-                            <a id="notificationMessage" class="link">Mark all as read</a>
-                          </span>
-                        </div>
-                        <div>
-                            <mat-list class="notificationList" perfect-scrollbar>
-                                    <mat-list-item *ngFor="let notification of notifications" [class.messageUnread]="notification.status == 'unread'">
-                                        <div fxFlex=16>
-                                            <img class="notificationUser-image" src="{{notification.imageURL}}">
-                                        </div>
-                                        <div class="mat-caption nofiticationContent" fxFlex>
-                                            {{notification.description|stringlength:95 }}
-                                            <div class="mat-caption">
-                                                <h6>{{notification.date}}</h6>
-                                            </div>
-                                        </div>
-                                    </mat-list-item>
-                                </mat-list>
-                        </div>
-                        <div class="mat-caption extendNotificationMessage">
-                            <a class="link">See All</a>
-                        </div>
-                    </mat-menu>
-                </div> -->
             </div>
             <div>
                 <div mat-mini-fab [matMenuTriggerFor]="menu" class="banner-userprofile" [fxHide.lt-md]="true" [fxShow]="true">
