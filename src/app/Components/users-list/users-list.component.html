@@ -41,7 +41,47 @@
     <div fxLayout="row" fxLayoutAlign="end">
         <button mat-raised-button (click)="addNew()"><i class="fa fa-add"></i>Add user</button>
     </div>
-    <table class="table table-responsive">
+    <div class="new-user" fxLayout="column" fxLayoutAlign="center center" *ngIf="addNewFlg==true">
+        <div fxLayout="column" class="add-form mat-elevation-z6" fxFlex="50">
+            <form [formGroup]="RegsistrationForm">
+                <div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput formControlName="name" placeholder="Enter Name">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input matInput formControlName="username" placeholder="Enter Username">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput formControlName="password" placeholder="Enter Password">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Role</mat-label>
+                            <mat-select placeholder="Category" formControlName="role">
+                                <mat-option value="1">Admin</mat-option>
+                                <mat-option value="2">General User</mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div mat-dialog-action [align]="'end'">
+                    <button mat-raised-button color="warn" (click)="addNewFlg=false">Cancel</button>
+                    <button mat-raised-button color="primary" style="margin-left:8px" (click)="saveUserData()">SAVE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table table-responsive timecard" border="all" *ngIf="addNewFlg!=true">
         <thead>
             <tr>
                 <th>Sr.No</th>

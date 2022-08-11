@@ -18,15 +18,7 @@ export class LoginService {
     return this.http.get(this.url);
   }
 
-  addUser(): Observable<any> {
-    var user =  {
-      "username": "Anand",
-      "name": "anand",
-      "password": "1234",
-      "role": "user",
-      "roleID": 2,
-      "id":4
-    }
+  addUser(user): Observable<any> {
     return this.http.post(this.url, user);
   }
 }

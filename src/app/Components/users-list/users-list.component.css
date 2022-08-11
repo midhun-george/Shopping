@@ -12,3 +12,70 @@ header {
     color: blue;
     top: 10px;
 }
+
+table.timecard {
+    margin: auto;
+    width: 1000px;
+    /*for older IE*/
+}
+
+.timecard td,
+.timecard th {
+    padding: 8px;
+}
+
+table.timecard caption {
+    background-color: #3f51b5;
+    color: #fff;
+    font-size: x-large;
+    font-weight: bold;
+    letter-spacing: .3em;
+}
+
+table.timecard thead th {
+    padding: 8px;
+    background-color: #3f51b5;
+    font-size: large;
+    color: #FFF;
+    text-align: center;
+}
+
+table.timecard th,
+table.timecard td {
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #323B69;
+}
+
+table.timecard tbody th {
+    text-align: left;
+    font-weight: normal;
+}
+
+table.timecard tfoot {
+    font-weight: bold;
+    font-size: large;
+    background-color: #687886;
+    color: #fff;
+}
+
+table.timecard tr.even {
+    background-color: #fde9d9;
+}
+
+.user-list {
+    padding: 10px;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.add-form {
+    width: 35%;
+    padding: 50px;
+}

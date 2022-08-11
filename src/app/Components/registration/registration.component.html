@@ -1,0 +1,86 @@
+<div class="users-header">
+    <mat-toolbar color="primary" class="mat-elevation-z2">
+
+        <header>
+            <div fxLayout="row" class="navbar" [fxShow.lt-md]="false" [fxHide]="false" fxLayoutAlign="space-between start">
+                <div fxLayout="column" fxFlex="50">
+                    <div fxLayout="row" fxFlex="100">
+                        <div fxLayout="row" class="navbar-brand align-item-center" fxFlex="100" fxLayoutAlign="space-between">
+                            <div>
+                                <button mat-icon-button class="example-icon" [routerLink]="['/header']" aria-label="Example icon-button with menu icon">
+                                                  <mat-icon>favorite</mat-icon>
+                                                </button>
+                                <span>My App</span>
+                            </div>
+                            <div fxLayout="row" fxFlex="75" style="position:relative" style="display:none">
+                                <div class="form-group" style="width:100%">
+                                    <!-- [(ngModel)]="searchTerm" (keyup)="search($event)" -->
+                                    <input type="text" class="form-control" placeholder="search user">
+                                </div>
+                                <span class="fas fa-search search-icon"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="column" style="height:10px;">
+                    <div mat-mini-fab class="banner-userprofile" [fxHide.lt-md]="true" [fxShow]="true">
+                        <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="banner-userprofile userprofile-border"> -->
+                        <img src='https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png' class="banner-userprofile userprofile-border" width="50" height="50">
+                    </div>
+
+                </div>
+            </div>
+
+
+        </header>
+
+    </mat-toolbar>
+</div>
+<div class="new-user" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" class="add-form mat-elevation-z6" fxFlex="50">
+        <h3>Signup</h3>
+        <form [formGroup]="RegsistrationForm">
+            <div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Enter Name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" placeholder="Enter Username">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password" placeholder="Enter Password">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Role</mat-label>
+                        <mat-select placeholder="Category" formControlName="role">
+                            <mat-option value="1">Admin</mat-option>
+                            <mat-option value="2">General User</mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayoutAlign="space-between">
+                <div>
+                    <span>Already have an Account?</span>
+                    <button mat-button routerLink="/login" style="color:blue; "> Login</button>
+                </div>
+                <div>
+                    <button mat-raised-button color="warn">Cancel</button>
+                    <button mat-raised-button color="primary" style="margin-left:8px" (click)="saveUserData()">SAVE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

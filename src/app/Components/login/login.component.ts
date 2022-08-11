@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   Password:string;
   Username;
   users;
-  
+  count:number=0;  
   constructor(private logService:LoginService, private route:Router, private dialog:MatDialog, private globals:GlobalsService) { }
 
   ngOnInit(): void {
@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
       this.users = res;
       let scope = this;
       res.find(function(val){
+        debugger;
         if(val.username == scope.Username){
+          
           if(val.password == scope.Password){
             //login success
             localStorage.setItem("token", JSON.stringify(val))
@@ -38,6 +40,14 @@ export class LoginComponent implements OnInit {
             scope.route.navigate(['/header']);
           }
           else{
+            scope.errorMessage()
+            scope.globals.showLoader = false;
+          }
+        } else{
+          debugger;
+          scope.count+=1;
+          
+          if(scope.count==res.length){
             scope.errorMessage()
             scope.globals.showLoader = false;
           }
@@ -62,12 +72,5 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  testUser(){
-    this.logService.addUser()
-    .subscribe({
-      next:(res)=>{
-        console.log(res);
-      }
-    })
-  }
+ 
 }

@@ -1,0 +1,154 @@
+header {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    color: blue;
+    top: 10px;
+}
+
+.add-form.mat-elevation-z6 {
+    width: 50%;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.new-user {
+    width: 80%;
+    margin: auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.ship-header {
+    padding: 10px;
+    background: #000;
+    color: #FFF;
+}
+
+.address-form {
+    padding: 30px;
+}
+
+.address-form label {
+    width: 200px
+}
+
+.cart-wrapper-row {
+    padding: 20px;
+}
+
+.address-form {
+    background: #fff;
+}
+
+.address-form input[type='text'],
+.address-form select {
+    height: 36px;
+    width: 300px;
+}
+
+.cart-wrapper-row {
+    padding: 20px;
+}
+
+.address-form {
+    padding: 15px;
+    background: #ddd;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+}
+
+.address-form label {
+    font-weight: bold;
+}
+
+.address-form label.required::after {
+    content: '*';
+    color: red;
+}
+
+h2 {
+    padding-bottom: 0;
+    margin-bottom: 0px !important;
+}
+
+header.summary-header {
+    padding: 10px;
+    background: #ddd;
+}
+
+.question-mark {
+    color: orangered
+}
+
+.summary-card h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* .order-card {
+    padding: 10px;
+} */
+
+.order-card h5 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.order-details {
+    padding: 10px;
+}
+
+.order-details {
+    padding: 10px;
+}
+
+span.item-title,
+.style {
+    font-weight: bold;
+}
+
+.order-card h5 {
+    margin-top: 20px;
+}
+
+.shipping-delivery.mat-elevation-z6 {
+    padding: 10px;
+}
+
+.shipping-header {
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+p.agreement {
+    padding: 15px;
+    background: #ddd;
+}
+
+
+/* .billing-button {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    bottom: 40px;
+    z-index: 2;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    width: 100%;
+    text-align: right;
+} */

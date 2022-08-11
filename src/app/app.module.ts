@@ -63,6 +63,9 @@ import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.
 import { FilterPipe } from './shared/filter.pipe';
 import { LoaderComponent } from './Components/loader/loader.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
+import { RegistrationComponent } from './Components/registration/registration.component';
+import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +93,10 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
     
     FilterPipe,
     LoaderComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    RegistrationComponent,
+    ForgotpasswordComponent,
+    CheckoutnewComponent
   ],
   imports: [
     BrowserModule,

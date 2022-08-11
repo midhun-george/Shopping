@@ -47,6 +47,14 @@
       "role": "user",
       "roleID": 2,
       "id": 4
+    },
+    {
+      "name": "George",
+      "username": "george",
+      "password": "1234",
+      "role": "General User",
+      "roleID": 2,
+      "id": 5
     }
   ],
   "products": [

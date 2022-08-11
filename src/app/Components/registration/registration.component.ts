@@ -3,29 +3,21 @@ import { GlobalsService } from '../../Services/globals.service'
 import { LoginService } from '../../Services/login.service'
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
-interface user{
-  id?:number;
-  name:string;
-  role:string;
-  username:string;
-  password:string;
-}
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-users-list',
-  templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class UsersListComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
 
-  constructor(private globals:GlobalsService, private login:LoginService, private fb:FormBuilder, private _snackBar: MatSnackBar,) { }
-  users;
-  addNewFlg:boolean=false;
+  constructor(private globals:GlobalsService, private login:LoginService, private snackbar:MatSnackBar,
+  private fb:FormBuilder, private route:Router
+  ) { }
   RegsistrationForm:FormGroup;
+  users
   ngOnInit(): void {
-    
-    this.getUsersList();
     this.initializeRegForm();
   }
   initializeRegForm(){
@@ -33,9 +25,11 @@ export class UsersListComponent implements OnInit {
       name:['', Validators.required],
       username:['', Validators.required],
       password:['', Validators.required],
-      role:['']
+      role:['2']
     })
+    this.globals.showLoader = false;
   }
+
   getUsersList(){
     this.login.getUsers().subscribe({
       next:(res)=>{
@@ -47,35 +41,31 @@ export class UsersListComponent implements OnInit {
     })
     this.globals.showLoader=false;
   }
-  addNew(){
-    this.addNewFlg = true;
-  }
+  
   saveUserData(){
     var userData = this.RegsistrationForm.value;
     var roles={"1":"Admin", "2":"General User"};
-    // userData = userData.map(function(val){
-    //   return {
-    //     "name":val.name,
-    //     "username":val.username,
-    //     "password":val.password,
-    //     "role":roles[val.role],
-    //     "roleID":val.role
-    //   }
-    // })
-    userData["role"] = roles[userData["role"]];
-    userData["roleID"] = userData["role"];
+    
+    userData["role"] = roles["2"];
+    userData["roleID"] = 2;
     var scope = this;
     this.login.addUser(userData)
 
     .subscribe({
       next:(res)=>{
-        let snackBarRef = scope._snackBar.open("User registered successfully!", "",{
+        let snackBarRef = scope.snackbar.open("You have successfully registered!", "Go to Login",{
           duration:2000
         });
-        scope.addNewFlg=false;
-        scope.getUsersList();
+        snackBarRef.onAction().subscribe(() => {
+          console.log('The snackbar action was triggered!');
+          scope.getUsersList();
+          scope.route.navigate(['/login']);
+    
+        });
+        
       }
     })
 
   }
+
 }

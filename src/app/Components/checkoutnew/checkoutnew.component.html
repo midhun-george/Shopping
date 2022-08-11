@@ -1,0 +1,207 @@
+<div class="users-header">
+    <mat-toolbar color="primary" class="mat-elevation-z2">
+
+        <header>
+            <div fxLayout="row" class="navbar" [fxShow.lt-md]="false" [fxHide]="false" fxLayoutAlign="space-between start">
+                <div fxLayout="column" fxFlex="50">
+                    <div fxLayout="row" fxFlex="100">
+                        <div fxLayout="row" class="navbar-brand align-item-center" fxFlex="100" fxLayoutAlign="space-between">
+                            <div>
+                                <button mat-icon-button class="example-icon" [routerLink]="['/header']" aria-label="Example icon-button with menu icon">
+                                                          <mat-icon>favorite</mat-icon>
+                                                        </button>
+                                <span>My App</span>
+                            </div>
+                            <!-- <div fxLayout="row" fxFlex="75" style="position:relative" style="display:none !important">
+                                <div class="form-group" style="width:100%">
+                                   
+                                    <input type="text" class="form-control" placeholder="search user">
+                                </div>
+                                <span class="fas fa-search search-icon"></span>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="column" style="height:10px;">
+                    <div mat-mini-fab class="banner-userprofile" [fxHide.lt-md]="true" [fxShow]="true">
+                        <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="banner-userprofile userprofile-border"> -->
+                        <img src='https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png' class="banner-userprofile userprofile-border" width="50" height="50">
+                    </div>
+
+                </div>
+            </div>
+
+
+        </header>
+
+    </mat-toolbar>
+</div>
+<div class="cart-wrapper" fxLayout="column">
+    <div class="cart-wrapper-row" fxLayout="row" fxLayoutGap="20">
+        <div fxLayout="column" fxFlex="70">
+            <div class="address-col">
+                <header class="ship-header">
+                    <div class="header-text">
+                        <h2>1.SHIPPING</h2>
+                    </div>
+                </header>
+                <div class="address-form" fxLayout="column" fxLayoutGap="10px">
+                    <form [formGroup]="CheckoutForm">
+                        <div fxLayout="column" fxLayoutGap="15px">
+                            <div>
+                                <label class="required">First Name</label>
+                                <input type="text" placeholder="Enter First Name" required>
+                            </div>
+                            <div>
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Enter Last Name">
+                            </div>
+                            <div>
+                                <label class="required">Postal Code</label>
+                                <input type="text" placeholder="Enter Postal Code" required>
+                            </div>
+                            <div>
+                                <label class="required">Address Line 1</label>
+                                <input type="text" placeholder="Enter Address Line 1">
+                            </div>
+                            <div>
+                                <label>Address Line 2</label>
+                                <input type="text" placeholder="Enter Address Line 2">
+                            </div>
+                            <div>
+                                <label>Muncipality</label>
+                                <input type="text" placeholder="Enter Muncipality">
+                            </div>
+                            <div>
+                                <label>Province/Territory</label>
+                                <select placeholder="Category">
+                                        <option value="Delhi">Delhi</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                </select>
+                            </div>
+                            <div fxLayout="column" fxLayoutGap="8">
+                                <label class="required">Select Delivery Method</label>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <input type="radio" selected name="dType"><span>Standard<span class="free">Free</span></span>
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <input type="radio" selected name="dType"><span>Express<span class="paid">CAD 40.00</span></span>
+                                </div>
+                                <!-- <mat-radio-group fxLayout="column" fxLayoutGap="10"> -->
+
+                                <!-- </mat-radio-group> -->
+                            </div>
+                            <div>
+                                <label>Shipping Phone</label>
+                                <input type="text" placeholder="Enter your Phone">
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <input type="text" placeholder="Enter your Email">
+                            </div>
+                            <div>
+                                <p><input type="checkbox"> Join NikePlus and save your delivery details for faster checkout.
+                                </p>
+                            </div>
+                        </div>
+                        <p><b>Already a member?</b><span class="sign-in" style="text-decoration:underline">Sign in</span></p>
+                        <p class="agreement"><input type="checkbox"> I have read and consent to eShopWorld processing my information in accordance with the
+                            <a href="#"> Privacy Statement</a> and <a href="#"> Cookie Policy</a>. eShopWorld is a trusted Nike partner.
+                        </p>
+
+                    </form>
+                    <div fxLayoutAlign="end" class="billing-button">
+                        <button mat-raised-button style="background:orangered; color:#FFF">CONTINUE TO BILLING</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column" fxFlex="30" fxLayoutGap="20">
+            <div class="summary-card mat-elevation-z6">
+                <header class="summary-header">
+                    <div class="header-text">
+                        <h2>2.SUMMARY</h2>
+                    </div>
+                </header>
+                <div fxLayout="column" style="padding: 15px">
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div fxLayout="row">
+                            <h4>SUBTOTAL</h4><span class="question-mark"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <div>
+                            <h4>CAD 210.00</h4>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <h4>SHIPPING & HANDLING</h4>
+                        </div>
+                        <div>
+                            <h4 style="color:orangered">FREE</h4>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div fxLayout="row">
+                            <h4>TAXES</h4><span class="question-mark"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="tax">
+                            <h4>CAD 31.00</h4>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div>
+                            <h4>TOTAL</h4>
+                        </div>
+                        <div>
+                            <h4 style="color:orangered">CAD 241.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-card order-card mat-elevation-z6">
+                <header class="summary-header" style="background:#ddd; padding:10px">
+                    <div class="header-text">
+                        <h2>IN YOUR CART (1)</h2>
+                    </div>
+                </header>
+                <h5 style="margin-left:10px">ARRIVES 18/11 - 26/11</h5>
+
+                <div class="order-details mat-elevation-z2" fxLayout="row">
+                    <div fxLayout="colum" fxFlex="40">
+                        <img src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg" height="150px">
+                    </div>
+                    <div fxLayout="column" fxFlex="60" fxLayoutGap="20">
+                        <span class="item-title">Mens Cotton Jacket</span>
+                        <div fxLayout="row">
+                            <span class="style">Style#:</span><span>CD707070-007</span>
+                        </div>
+                        <div fxLayout="row">
+                            <span class="style">Size:</span><span><b>US 38</b></span>
+                        </div>
+                        <div fxLayout="row">
+                            <span class="style">QTY:</span><span><b>1</b></span>
+                        </div>
+                        <div fxLayout="row">
+                            <span style="color:orangered"><b>CAD 210.00</b></span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <mat-divider></mat-divider>
+                <a href="" mat-button color="primary" style="text-decoration:underline">Edit Card</a>
+
+            </div>
+            <div class="shipping-delivery mat-elevation-z6" style="margin-top:10px">
+                <div class="shipping-header">SHIPPING & DELIVERY</div>
+                <p>Orders are delivered on business days (Monday - Friday) excluding public holidays.</p>
+                <p>
+                    <a href="#">See details</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
