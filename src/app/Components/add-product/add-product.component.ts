@@ -16,7 +16,9 @@ export class AddProductComponent implements OnInit {
     this.initilizeForm()
   }
 
+  // Initializes the reactive form with empty values
   initilizeForm(){
+
     this.addForm = this.fb.group({
       productName:['', [Validators.required]],
       brand:[''],
@@ -24,6 +26,9 @@ export class AddProductComponent implements OnInit {
       favorite:[true]
     })
   }
+
+  //emits the event addProductDetails with value , will be handled in the parent
+  //child parent communication
   addProduct(f){
     
     this.addProductDetails.emit(f.value)

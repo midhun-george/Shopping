@@ -16,8 +16,9 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.color);
   }
+  //Check and decide to show/hide add details form
   showOrHide(){
-    debugger;
+    
     this.showHide = !this.showHide;
     let data = {tab:this.tab, showHide:this.showHide}
     this.uiService.showHideAdd(data);

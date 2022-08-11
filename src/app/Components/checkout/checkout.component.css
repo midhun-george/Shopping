@@ -5,7 +5,7 @@ span.step-no {
     border-radius: 2px;
     padding: 3px 7px;
     vertical-align: baseline;
-    margin-right: 17px;
+    margin-right: 3px;
     height: 25px;
     text-align: center;
 }
@@ -47,6 +47,7 @@ span.step-no {
     font-weight: 500;
     padding: 14px 24px;
     border-radius: 2px 2px 0 0;
+    background: #eee;
 }
 
 .title-bar.active {
@@ -180,4 +181,40 @@ span.e-kart {
 .cards input,
 .cards img {
     margin: 0px 10px;
+}
+
+.new-address mat-card {
+    padding-top: 0;
+}
+
+mat-form-field {
+    width: calc(50% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+input#UPIID {
+    font-size: 14px;
+    outline: none;
+    border-radius: 2px;
+    padding: 10px;
+    width: 100%;
+}
+
+.upi-text-verify {
+    position: relative;
+    width: 50%;
+}
+
+.verify {
+    position: absolute;
+    right: 16px;
+    top: 5px;
+    color: #2874f0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.upiid-text {
+    margin-top: 10px;
 }

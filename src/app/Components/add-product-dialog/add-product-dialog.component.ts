@@ -17,6 +17,8 @@ buttonTxt="Save";
   ) { }
 
   ngOnInit(): void {
+
+    //Reactive form initialization
     this.ProductForm = this.fb.group({
       productName:['', Validators.required],
       productCategory:['', Validators.required],
@@ -27,6 +29,7 @@ buttonTxt="Save";
     })
 
     console.log(this.editData);
+    //if updation, pre fill data
     if(this.editData){
       this.ProductForm.controls['productName'].setValue(this.editData.productName);
       this.ProductForm.controls['productCategory'].setValue(this.editData.productCategory);
@@ -37,6 +40,7 @@ buttonTxt="Save";
       this.buttonTxt = "Update";
     }
   }
+  //check if insert or update and call apis appropriately
   saveData(){
     if(!this.editData){
     this.api.addProductsList(this.ProductForm.value)

@@ -19,13 +19,12 @@ export class AddTasksComponent implements OnInit {
   day:string='';
   ngOnInit(): void {
    
-    // this.uiService.getShowHideVal().subscribe(res=>{
-    //   debugger;
-    // })
   }
 
+  //prepare object and emit addTaskDetails event with prepared object
+  //pass data from child to parent
   addTask(f){
-    debugger;
+    
     let fVal = {}
     fVal["text"] = f.value.text;
     fVal["day"] = f.value.day;

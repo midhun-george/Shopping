@@ -30,13 +30,14 @@
                 <div fxLayout="column" *ngIf="step==2">
                     <div fxLayout="row" *ngFor="let item of address; let i = index" class="address-lists" [ngClass]='{selected:item.primary}' (click)="makePrimary(i)">
                         <div fxLayout="column" fxFlex="5">
-                            <input type="radio" name="add" value="item.id" style="margin-top:4px">
+                            <input type="radio" name="add" [(ngModel)]="myAddress" [value]="item.id" style="margin-top:4px">
                         </div>
                         <div fxLayout="column" fxFlex="95">
-                            <div fxLayout="row" class="add-wrapper" fxLayoutGap="20px">
+                            <div fxLayout="row" class="add-wrapper" fxLayoutGap="20px" style="position:relative">
                                 <span>{{item.Name}}</span>
                                 <span class="add-type">{{item.type}}</span>
                                 <span><h4>{{item.Mobile}}</h4></span>
+                                <button *ngIf="item.primary" mat-stroked-button (click)="addEditAddress(item)" style="position:absolute; right:0">EDIT</button>
                             </div>
                             <div class="add-text" fxLayout="column" fxLayoutGap="10">
                                 <span>{{item.Address}}</span>
@@ -48,46 +49,107 @@
                     </div>
                 </div>
             </div>
+            <div class="new-address" *ngIf="!addNewAddress">
+                <mat-card>
 
+                    <mat-card-content>
+                        <!-- <button mat-raised-button>Add a new address</button> -->
+                        <div fxLayout="row" (click)="addEditAddress('')" fxLayoutAlign="start center">
+                            <mat-icon class="mat-18" color="primary">add</mat-icon>
+                            <a mat-button color="primary">Add a new address</a>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="mat-elevation-z6" style="padding:20px" *ngIf="addNewAddress">
+                <form [formGroup]="addressForm">
+                    <div mat-dialog-content>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="Name" placeholder="Name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <input type="number" formControlName="Mobile" matInput placeholder="10- digit mobile number">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <input type="number" formControlName="Pin" matInput placeholder="Pincode">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="Locality" placeholder="Locality">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" style="width: calc(100% - 20px);">
+                            <textarea matInput formControlName="Address" placeholder="Address/ (area & street)"></textarea>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="City" placeholder="City/District/Town">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="Landmark" placeholder="Landmark (optional)">
+                        </mat-form-field>
+
+
+                        <div fxLayout="column" fxLayoutGap="8">
+                            <label>Address Type:</label>
+                            <!-- <mat-radio-button value="Home" formControlName="Atype">
+                                Home (All day delivery)
+                            </mat-radio-button>
+                            <mat-radio-button value="Work" formControlName="Atype">
+                                Work (Delivery between 10 AM - 5 PM)
+                            </mat-radio-button> -->
+                            <mat-radio-group formControlName="type" fxLayout="column" fxLayoutGap="10">
+                                <mat-radio-button *ngFor="let add of addressTypeList" [value]="add.type">{{add.label}}</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div mat-dialog-action [align]="'end'">
+                        <button mat-raised-button color="warn" (click)="addNewAddress=false">Cancel</button>
+                        <button mat-raised-button color="primary" style="margin-left:8px" (click)="saveAddressData()">Add</button>
+                    </div>
+                </form>
+            </div>
             <div class="step-3">
                 <div class="title-bar" [ngClass]='{active:step==3}'>
                     <span class="step-no" fxFlex="25px">3</span>
                     <span class="step-name-2">ORDER SUMMARY</span>
                 </div>
-                <div fxLayout="row" class="order-list mat-elevation-z8" *ngFor="let order of orders">
-                    <div fxLayout="column" fxFlex="120px">
-                        <div style="height: 112px; width: 112px; padding:12px">
-                            <img [src]="order.image" class="order-img" />
+                <div *ngIf="step==3">
+                    <div fxLayout="row" class="order-list mat-elevation-z8" *ngFor="let order of orders">
+                        <div fxLayout="column" fxFlex="120px">
+                            <div style="height: 112px; width: 112px; padding:12px">
+                                <img [src]="order.image" class="order-img" />
+                            </div>
                         </div>
-                    </div>
-                    <div fxLayout="column" fxFlex="50">
-                        <h3 style="margin-bottom:0px">{{order.title}}</h3>
-                        <span>Finish Color - BLACK, DIY(Do-It-Yourself)</span>
-                        <div fxLayout="row" style="margin-bottom:10px; margin-top:10px;">
-                            <span>Seller: GoldenFish</span> <span class="e-kart"><i>ek</i>Assured</span>
-                        </div>
-                        <div fxLayout="row" fxLayoutGap="25">
-                            <span class="strike">{{order.actualPrice | currency}}</span>
-                            <span class="current"><b>{{order.price | currency}}</b></span>
-                            <span class="profit" [innerHTML]="getHTML(order)"></span>
+                        <div fxLayout="column" fxFlex="50">
+                            <h3 style="margin-bottom:0px">{{order.title}}</h3>
+                            <span>Finish Color - BLACK, DIY(Do-It-Yourself)</span>
+                            <div fxLayout="row" style="margin-bottom:10px; margin-top:10px;">
+                                <span>Seller: GoldenFish</span> <span class="e-kart"><i>ek</i>Assured</span>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="25">
+                                <span class="strike">{{order.actualPrice | currency}}</span>
+                                <span class="current"><b>{{order.price | currency}}</b></span>
+                                <span class="profit">{{order.profit}}</span>
 
+                            </div>
+                            <div class="remo">
+                                <button mat-button>Remove</button>
+                            </div>
                         </div>
-                        <div class="remo">
-                            <button mat-button>Remove</button>
-                        </div>
-                    </div>
-                    <div fxLayout="column" fxFlex="30">
-                        <div fxLayout="row" fxLayoutGap="10">
-                            <span>Delivered by </span>
-                            <span class="delivered-by" [innerHTML]="randomDate()|date"></span>
-                            <span>| Free <span class="strike">₹40</span></span>
+                        <div fxLayout="column" fxFlex="30">
+                            <div fxLayout="row" fxLayoutGap="10">
+                                <span>Delivered by </span>
+                                <span class="delivered-by">{{order.deliveryDate | date}}</span>
+                                <span>| Free <span class="strike">₹40</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="order-btn-div mat-elevation-z4">
                 <div class="VUS-tD btn-div">
-                    <button class="order-btn"><span>Place Order</span></button>
+                    <button class="order-btn" (click)="placeOrder()"><span>Place Order</span></button>
                 </div>
             </div>
             <div class="step-4">
@@ -128,11 +190,34 @@
 
                                     <input matInput placeholder="CVV" name="brand">
                                 </mat-form-field>
-                                <button mat-raised-button color="primary" style="margin-left:20px">CONTINUE</button>
+                                <button mat-raised-button color="primary" style="margin-left:20px" (click)="complete()">CONTINUE</button>
                             </div>
                         </div>
                     </div>
 
+                </div>
+                <div class="upis mat-elevation-z6 cards" fxLayout="column" fxLayoutGap="15">
+                    <div fxLayout="row" fxLayoutGap="15">
+                        <input type="radio" name="upi" (change)="upiChecked=true">
+                        <img src="https://img1a.flixcart.com/linchpin-web/batman-returns/logos/upiLogo6.gif" width="25px" height="25px">
+                        <span>UPI</span>
+                    </div>
+                    <div class="upi-options" *ngIf="upiChecked">
+                        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                            <input type="radio" name="upiOption" (change)="phonePe=true"><span>PhonePe</span>
+                            <button mat-raised-button *ngIf="phonePe" style="background:#fb641b">CONTINUE</button>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                            <input type="radio" name="upiOption" (change)="myUPI=true"><span>Your UPI ID</span>
+                        </div>
+                        <div class="upiid-text" fxLayout="column" *ngIf="myUPI==true">
+                            <div class="upi-text-verify">
+                                <input type="text" placeholder="Enter your UPI ID" name="UPIID" id="UPIID">
+                                <button mat-button class="verify" (click)="complete()">VERIFY</button>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
