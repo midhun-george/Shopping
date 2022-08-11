@@ -19,7 +19,7 @@ interface users {
 
 export class CheckoutComponent implements OnInit {
   addressForm:FormGroup;
-  myAddress = 1;
+  myAddress :number =  1;
   addressType="home";
   userData:users;
   addNewAddress:boolean = false;
