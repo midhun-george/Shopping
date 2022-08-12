@@ -66,6 +66,7 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.compo
     CheckoutComponent,
     RegistrationComponent,
     ForgotpasswordComponent,
-    CheckoutnewComponent
+    CheckoutnewComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
