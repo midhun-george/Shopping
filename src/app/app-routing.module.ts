@@ -16,6 +16,7 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 const routes: Routes = [
 {path:'', component:LoginComponent, canActivate:[LoginGuard]},   
@@ -29,7 +30,8 @@ const routes: Routes = [
 
 {path:"cart", component: ShoppingCartComponent},
 {path:"checkout", component: CheckoutComponent},
-{path:"checkoutnew", component: CheckoutnewComponent}
+{path:"checkoutnew", component: CheckoutnewComponent},
+{path:"contact", component: ContactComponent}
 
 ];
 
