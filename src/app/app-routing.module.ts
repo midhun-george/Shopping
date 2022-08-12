@@ -8,7 +8,7 @@ import { AboutComponent } from './Components/about/about.component';
 import { HeadermenuComponent } from './Components/header-menu/header-menu.component';
 import { ProductComponent } from './Components/product/product.component';
 import { UsersListComponent } from './Components/users-list/users-list.component';
-import { AuthGuard, RoleGuard } from './shared/auth.guard';
+import { AuthGuard, RoleGuard, LoginGuard } from './shared/auth.guard';
 import { ToastrModule } from 'ngx-toastr';
 import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
@@ -17,8 +17,9 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
 
-const routes: Routes = [{path:'', component:LoginComponent},   
-{path:"login", component: LoginComponent},
+const routes: Routes = [
+{path:'', component:LoginComponent, canActivate:[LoginGuard]},   
+{path:"login", component: LoginComponent, canActivate:[LoginGuard]},
 {path:"tasklist", component: TaskListComponent, canActivate:[AuthGuard]},
 {path:"header", component: HeadermenuComponent, canActivate:[AuthGuard]},
 {path:"shopping", component: ShoppingListComponent, canActivate:[AuthGuard]},

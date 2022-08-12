@@ -63,3 +63,23 @@ export class RoleGuard implements CanActivate {
     }
   }
 }
+
+@Injectable({
+  providedIn:'root'
+})
+
+export class LoginGuard implements CanActivate {
+  constructor(private auth: AuthService, private router:Router){}
+  canActivate(
+      next: ActivatedRouteSnapshot,
+      state: RouterStateSnapshot): boolean {
+      // redirect logic goes here
+      let user = JSON.parse(localStorage.getItem("token"))
+      if(user){
+        this.router.navigate(['header']);
+        return false
+      }else{
+        return true;
+      }
+  }
+}
