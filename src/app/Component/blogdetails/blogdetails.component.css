@@ -1,0 +1,55 @@
+.box__image {
+    border-radius: 20px;
+    padding: 21px;
+    float: left;
+}
+
+.box__title {
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.box__link {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+section.blog-container {
+    width: 65%;
+    margin: auto;
+    padding: 20px;
+    top: 50px;
+    position: relative;
+}
+
+.userInfo {
+    margin-top: 20px;
+}
+
+.u-img img {
+    border-radius: 50%;
+}
+
+span.example-spacer {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.mat-menu-trigger.banner-userprofile img {
+    width: 50px !important;
+    height: 50px;
+    border-radius: 50% !important;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.banner-userprofile {
+    width: 50px;
+}
+
+.btns {
+    padding: 10px;
+}

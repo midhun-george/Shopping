@@ -17,6 +17,10 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { BlogComponent } from './Components/blog/blog.component';
+import { BloglistComponent,homeChildRoutes } from './Components/bloglist/bloglist.component';
+import { AlterblogsComponent } from './Components/alterblogs/alterblogs.component';
+import { BlogdetailsComponent } from './Component/blogdetails/blogdetails.component';
 
 const routes: Routes = [
 {path:'', component:LoginComponent, canActivate:[LoginGuard]},   
@@ -31,7 +35,20 @@ const routes: Routes = [
 {path:"cart", component: ShoppingCartComponent},
 {path:"checkout", component: CheckoutComponent},
 {path:"checkoutnew", component: CheckoutnewComponent},
-{path:"contact", component: ContactComponent}
+{path:"contact", component: ContactComponent},
+{path:"bloglist", component: AlterblogsComponent, children:[
+  {
+  path:'', component:BloglistComponent
+},{
+  path:'blog', component:BlogComponent
+},
+{
+  path:'detail', component:BlogdetailsComponent
+},{
+path:'edit', component:BlogComponent
+}
+]},
+
 
 ];
 
