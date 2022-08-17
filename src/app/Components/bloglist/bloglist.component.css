@@ -1,0 +1,27 @@
+.search-items mat-card {
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 16px 0;
+}
+
+.blogs-wrapper {
+    padding: 20px;
+}
+
+span.example-spacer {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.mat-menu-trigger.banner-userprofile img {
+    width: 50px !important;
+    height: 50px;
+    border-radius: 50% !important;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.banner-userprofile {
+    width: 50px;
+}

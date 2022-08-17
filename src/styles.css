@@ -86,3 +86,8 @@ body {
 .my-custom-snackbar span {
     color: #FFF
 }
+
+html,
+body {
+    font-family: robot;
+}

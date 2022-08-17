@@ -67,6 +67,13 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { CheckoutnewComponent } from './Components/checkoutnew/checkoutnew.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { BlogComponent } from './Components/blog/blog.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { NgxEditorModule } from 'ngx-editor';
+import { AlterblogsComponent } from './Components/alterblogs/alterblogs.component';
+import { BloglistComponent } from './Components/bloglist/bloglist.component';
+import { BlogdetailsComponent } from './Component/blogdetails/blogdetails.component';
+import { StringlengthPipe } from './stringlength.pipe';
 
 @NgModule({
   declarations: [
@@ -98,7 +105,12 @@ import { ContactComponent } from './Components/contact/contact.component';
     RegistrationComponent,
     ForgotpasswordComponent,
     CheckoutnewComponent,
-    ContactComponent
+    ContactComponent,
+    BlogComponent,
+    AlterblogsComponent,
+    BloglistComponent,
+    BlogdetailsComponent,
+    StringlengthPipe
   ],
   imports: [
     BrowserModule,
@@ -114,7 +126,8 @@ import { ContactComponent } from './Components/contact/contact.component';
     RouterModule,
     HttpClientModule,
     NgxPaginationModule,
-    
+    ImageCropperModule,
+    NgxEditorModule,
     MatExpansionModule,MatSnackBarModule,MatProgressSpinnerModule,
     MatMenuModule,
     MatListModule,

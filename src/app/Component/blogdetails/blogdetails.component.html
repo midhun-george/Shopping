@@ -1,0 +1,91 @@
+<p>
+    <mat-toolbar color="primary" class="mat-elevation-z2">
+        <div>
+            <button mat-icon-button class="example-icon" [routerLink]="['/header']" aria-label="Example icon-button with menu icon">
+                              <mat-icon>favorite</mat-icon>
+                            </button>
+            <span>My App</span>
+        </div>
+        <span class="example-spacer"></span>
+        <div class="mat-button-blog" [routerLink]="['/bloglist']" routerLinkActive="active">
+            <button mat-mini-fab color="accent">
+                    <i class="material-icons footer-icon ">contact_mail</i>
+                    
+                  </button> Blogs
+        </div>
+        <div>
+            <div mat-mini-fab [matMenuTriggerFor]="menu" class="banner-userprofile" [fxHide.lt-md]="true" [fxShow]="true">
+                <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="banner-userprofile userprofile-border"> -->
+                <img src='https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png' class="banner-userprofile userprofile-border">
+            </div>
+            <div mat-mini-fab class="banner-userprofile" [fxShow]="true">
+                <!-- <img src='https://picsum.photos/200' class="banner-userprofile userprofile-border"> -->
+            </div>
+            <mat-menu #menu="matMenu" class="userMenu subMenuPosition submenuStyle">
+                <mat-card class="usermenu-card ">
+                    <div fxLayout="column" style="padding:10px 10px 0px 10px;min-width: 300px;">
+                        <div fxLayout="row">
+                            <div fxFlex="25">
+                                <!-- <img src="{{globals.userDetails?.avatar||defaultuserlogo}}" class="usermenu-card-image"> -->
+                            </div>
+                            <div fxFlex="70" class="usermenu-card-header">
+                                <mat-card-header>
+                                    <mat-card-title class="usermenu-card-header-title">
+                                        <!-- <span class="mat-title">{{globals.userDetails.firstname}} {{globals.userDetails.lastname}}</span> -->
+                                    </mat-card-title>
+                                    <!-- <mat-card-subtitle class="usermenu-card-header-subtitle">{{globals.userDetails.email}}</mat-card-subtitle> -->
+                                </mat-card-header>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+
+                            <div fxLayout="column" class="usermenu-options-container" fxFlex='100px' [routerLink]="['userdashboard']">
+                                <i class="fa fa-user footer-icon fa-2x" aria-hidden="true" [ngStyle]="{'color': '#ff8a80'}"></i>
+                                <span class="mat-body-2">{{"My Profile"}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-card-actions align="end" class="usermenu-card-actions">
+                        <button mat-raised-button color="primary" (click)="logout()">
+                            <i class="fa fa-sign-out footer-icon " aria-hidden="true" style="font-size: 20px;"></i>
+                            <span>Sign Out</span>
+                          </button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+</p>
+<section class="edit-delete mat-elevation-z2" style="width:98%; margin:auto">
+    <div class="btns" fxLayoutGap="10px" fxLayoutAlign="end center">
+        <button mat-raised-button color="accent" (click)="editBlog()">Edit</button>
+        <button mat-raised-button (click)="deleteBlog()">Delete</button>
+    </div>
+</section>
+<section class="blog-container mat-elevation-z4">
+    <div class="task__holder">
+        <div class="box" *ngIf="a">
+            <img class="box__image" [src]="a.BlogImg">
+            <div class="box__wrapper">
+                <h2 class="box__title">{{a.Title}}</h2>
+                <p class="box__text" [innerHTML]="a.Description">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div fxLayout="row" class="userInfo" fxLayoutGap="40px">
+        <div class="u-img" fxLayoutAlign="start center">
+            <img src="https://dbcms.s3.amazonaws.com/devbridgecom/bcms/image/cdb81346f5ec4f708a53c58c48dbb288/knight-king-small.png">
+        </div>
+        <div class="u-desc" fxLayout="column">
+            <h1><b>{{a.Author}}</b></h1>
+            <p>Dad joke aficionado, cartoonist, & contributor for sites like HelloGiggles and The Mary Sue by night. When I'm not writing or drawing, you can find me in my cave of a room hanging out with my boyfriend, Netflix.</p>
+            <div>
+                <a mat-button>{{'All Posts' | uppercase}}</a><a mat-button>{{'Website'| uppercase}}</a>
+            </div>
+        </div>
+    </div>
+</section>

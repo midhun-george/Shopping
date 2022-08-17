@@ -1,0 +1,15 @@
+.blog-form-wrapper {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    position: relative;
+    top: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.cropper-div {
+    padding: 20px;
+}

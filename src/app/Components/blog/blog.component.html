@@ -1,0 +1,48 @@
+<div class="mat-elevation-z8 blog-form-wrapper">
+    <form [formGroup]="blogForm">
+        <div class="titles" fxLayout="row" fxLayoutGap="20px">
+            <div fxFlex="50">
+                <p><label>Title</label></p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input type="text" formControlName="Title" matInput placeholder="Title">
+                </mat-form-field>
+            </div>
+            <div fxFlex="50">
+                <p><label>Author</label></p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Author</mat-label>
+                    <input type="text" formControlName="Author" matInput placeholder="Author">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="NgxEditor__Wrapper" style="margin-bottom:20px">
+            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+            <ngx-editor [editor]="editor" formControlName="Description" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+        </div>
+
+
+        <div fxLayout="column" fxLayoutGap="20px" class="cropper-div mat-elevation-z4">
+            <input type="file" (change)="fileChangeEvent($event)" />
+            <div fxLayout="row" fxLayoutGap="20px">
+                <div fxFlex="50" class="original-image">
+                    <p *ngIf="uploaded">Original</p>
+                    <image-cropper [imageBase64]="imageBase64String" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
+                </div>
+                <div fxFlex="50" class="cropped-image">
+                    <p *ngIf="uploaded">Cropped</p>
+                    <img [src]="croppedImage" style="width:100%" />
+                </div>
+            </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="center end" fxLayoutGap="20px" class="cropper-div mat-elevation-z4">
+            <div>
+                <button mat-raised-button color="ascent" [routerLink]="['/bloglist']">Cancel</button>
+                <button mat-raised-button color="primary" style="margin-left:10px" (click)="saveData()">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
